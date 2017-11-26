@@ -183,6 +183,7 @@ margin: 0;
     height: calc(81vh - 140px);
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
+    text-align: center;
 }
 
 .ParentProductId{
@@ -215,7 +216,7 @@ width: 30%;
 
 .ticket-sub{
 position: absolute;
-left: 30%;
+left: 10%;
 -webkit-transform: translateX(-50%) rotate(90deg);
 transform: translateX(-50%) rotate(-90deg);
 top: 50%;
@@ -224,6 +225,19 @@ color: #f1bf1c;}
 
 .position-relative{
     position: relative;
+}
+
+.ticket-cost{
+    font-size: 3em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ticket-cost-text{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+    line-height: 15px;
 }
 
 

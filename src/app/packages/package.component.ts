@@ -23,11 +23,13 @@ import {PackagesModel} from "./packages.model";
 
            <div>
           
-           <span>{{package?.TicketCost}}</span>
-           <span>שקל<br/>
-           לכרטיס<br/>
-           בודד
-           </span>
+           <div class="ticket-cost">{{package?.TicketCost}}</div>
+           <div class="ticket-cost-text">
+           <span>שקל</span><br/>
+           <span>לכרטיס</span><br/>
+           <span>בודד </span>
+           </div>
+          
 
                </div>
 <div class="Line-buffer"></div>
