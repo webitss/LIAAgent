@@ -215,7 +215,7 @@ width: 30%;
 
 .ticket-sub{
 position: absolute;
-left: 50%;
+left: 30%;
 -webkit-transform: translateX(-50%) rotate(90deg);
 transform: translateX(-50%) rotate(-90deg);
 top: 50%;

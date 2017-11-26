@@ -16,14 +16,18 @@ import {PackagesModel} from "./packages.model";
 
            <div class="position-relative">
            <span class="TicketsNum-inner">{{package?.TicketsNum}}</span>
-           <div class="ticket-sub">כרטיסים:</div>
+           <div class="ticket-sub">כרטיסים</div>
            </div>
 
 <div class="Line-buffer"></div>
 
            <div>
-           <span>שקל לכרטיס בודד:</span>
+          
            <span>{{package?.TicketCost}}</span>
+           <span>שקל<br/>
+           לכרטיס<br/>
+           בודד
+           </span>
 
                </div>
 <div class="Line-buffer"></div>
