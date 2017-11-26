@@ -7,11 +7,13 @@ import {Router} from '@angular/router';
     template: ` 
     <div class="bg-login" id="body">
 
-    <div>
+    <div class="logo-login">
     <img src="assets/pictures/logo-login.png"/>
     </div>
-        <button routerLink="/login" (click)="mini()" >---></button>
 
+
+        <button routerLink="/login" (click)="mini()" class="arrow-login-open"><i class="icon-arrow-right-02 "></i></button>
+<div class="gradient-color"></div>
     </div>
    
         <router-outlet></router-outlet>
@@ -19,33 +21,7 @@ import {Router} from '@angular/router';
     `,
     styles: [
             `
-            
-
-            .menu {
-
-                position: absolute;
-                width: 1920px;
-                bottom: 0px;
-
-            }
-
-            div {
-                display: inline-block;
-                position: relative;
-                width: 19%;
-                font-family: "Roboto";
-                height: 50px;
-                text-align: center;
-                font-size: 18px;
-                font-weight: 400;
-                line-height: 50px;
-                cursor: pointer;
-                text-decoration: none;
-                z-index: 1;
-
-            }
-
-            
+        
            
             .hoverbtn.small {
                 font-size: 20px;
@@ -195,7 +171,7 @@ export class LogoComponent {
 
     mini() {
         var body = document.getElementById("body");
-        body.style.width = "960px";
+        body.style.width = "50%";
         body.style.cssFloat = "right";
         //this.router.navigate(['/login']);
     }

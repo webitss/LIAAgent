@@ -48,6 +48,24 @@ background-color: #11106f;
 height: 100vh;
 width: 100%;
  }
+
+ .logo-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ .arrow-login-open{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+ }
  /* header */
 
  .myHeader {
@@ -183,17 +201,43 @@ width: 30%;
     border-bottom: 1px solid white;
 }
 
+.Line-buffer{
+    width: 80%;
+    height: 2px;
+    background-color: #f1bf1b;
+    margin: 20px auto;
+}
 
+.TicketsNum-inner{
+    font-size: 5em;
+    color: #f1bf1c;
+}
+
+.ticket-sub{
+position: absolute;
+left: 50%;
+-webkit-transform: translateX(-50%) rotate(90deg);
+transform: translateX(-50%) rotate(-90deg);
+top: 50%;
+color: #f1bf1c;}
+
+
+.position-relative{
+    position: relative;
+}
 
 
 /*end-ticket*/
 
 .gradient-color{
    background: #7dc041; /* Old browsers */
-   background: -moz-linear-gradient(top, #7dc041 17%, #7dc041 24%, #e12468 25%, #e12468 25%, #e12468 49%, #f1bf1b 50%, #f1bf1b 70%, #f1bf1b 70%, #f1bf1b 74%, #44bdd7 75%, #44bdd7 99%); /* FF3.6-15 */
-   background: -webkit-linear-gradient(top, #7dc041 17%,#7dc041 24%,#e12468 25%,#e12468 25%,#e12468 49%,#f1bf1b 50%,#f1bf1b 70%,#f1bf1b 70%,#f1bf1b 74%,#44bdd7 75%,#44bdd7 99%); /* Chrome10-25,Safari5.1-6 */
-   background: linear-gradient(to bottom, #7dc041 17%,#7dc041 24%,#e12468 25%,#e12468 25%,#e12468 49%,#f1bf1b 50%,#f1bf1b 70%,#f1bf1b 70%,#f1bf1b 74%,#44bdd7 75%,#44bdd7 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   background: -moz-linear-gradient(top, #7dc041 25%, #7dc041 25%, #e12468 25%, #e12468 25%, #e12468 50%, #f1bf1b 50%, #f1bf1b 75%, #f1bf1b 75%, #44bdd7 75%, #44bdd7 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #7dc041 25%,#7dc041 25%,#e12468 25%,#e12468 25%,#e12468 50%,#f1bf1b 50%,#f1bf1b 75%,#f1bf1b 75%,#44bdd7 75%,#44bdd7 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #7dc041 25%,#7dc041 25%,#e12468 25%,#e12468 25%,#e12468 50%,#f1bf1b 50%,#f1bf1b 75%,#f1bf1b 75%,#f1bf1b 75%,#44bdd7 75%,#44bdd7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7dc041', endColorstr='#44bdd7',GradientType=0 ); /* IE6-9 */
+   width: 10px;
+   height: 100%;
+   float: left;
 }
 
 @-webkit-keyframes sonarEffect {
