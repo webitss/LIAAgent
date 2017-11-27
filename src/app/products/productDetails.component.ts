@@ -23,9 +23,19 @@ import { LiaService } from "../lia.service";
           
      }`
     ],
-    template: `
-      <div class="div">
-          {{this.service.thisProductDetails.ProductId}}          
+    template: ` 
+    <input type="button" value="לצפיה">
+    <img [src]="this.service.thisProductDetails.PictureUrl"/>
+    <h1>{{this.service.thisProductDetails.Duration}}
+    {{this.service.thisProductDetails.DurationText}}    
+    </h1>
+    <br>  
+    <h2>
+    מחיר:
+    {{this.service.thisProductDetails.Price}} 
+    </h2>
+    <input type="button" value="הוסף לסל">
+    <div class="div">
       </div>
 `})
 export class ProductDetailsComponent {
