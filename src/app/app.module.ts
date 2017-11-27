@@ -25,6 +25,7 @@ import { PackageSelectedComponent } from './packages/packageSelected.component';
 import { PopupComponent } from './popups/popup.component';
 
 
+
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     return new AuthHttp(new AuthConfig({
         tokenGetter: (() => localStorage.getItem('access_token'))
@@ -37,6 +38,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
         AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
         PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent
+
     ],
     imports: [
             BrowserModule,HttpModule,
@@ -51,10 +53,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'productDetails', component: ProductDetailsComponent},
                 //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
                 {path: 'product', component: ProductsComponent},
-                {path: 'productDetails', component: ProductDetailsComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
-                {path: 'enter', component: EnterComponent}
+                {path: 'enter', component: EnterComponent},                    
             ]}
 
         ])

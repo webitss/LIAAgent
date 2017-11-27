@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {LiaProxy} from "./proxy";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class LiaService {
@@ -13,8 +14,9 @@ export class LiaService {
     customers:any[];
     nowComponent:String;
     product:any;
+    thisProductDetails: any;
     
-    constructor(private proxy: LiaProxy) {
+    constructor(private proxy: LiaProxy, public router: Router) {
         this.galeryPictures=new Array();
         this.products=new Array();
         this.customers=new Array();
@@ -50,6 +52,9 @@ export class LiaService {
             //return this.packages[0];
         }).catch(() => console.log("error"));
     }
+
+    
+
     getPackageById(id: number): any {
         console.log(this.packages.length);
         for(let i=0;i<this.packages.length;i++)
@@ -58,19 +63,30 @@ export class LiaService {
 
     }
 
-    getProductById(id:number)
-    {
-        for (let i=0;i<this.products.length;i++)
-        {
-            console.log(this.products[i].ProductId+" "+id);
-            if(this.products[i].ProductId==id)
-            {
-                this.product=this.products[i];
-                i=this.products.length;
-            }
-        }
+//     getProductById(id:number)
+//     {
+//         for (let i=0;i<this.products.length;i++)
+//         {
+//           
+//             if(this.products[i].ProductId==id)
+//             {
+//                 this.product=this.products[i];
+//                 i=this.products.length;
+//             }
+//         }
 
+//    }
+
+   goTo(pr:number)
+   {
+       for(let i=0; i< this.products.length; i++){
+           if(this.products[i].ProductId === pr)
+           this.thisProductDetails = this.products[i];
+       }
+
+       this.router.navigate(['menu/productDetails']);
    }
+  
 }
 
 

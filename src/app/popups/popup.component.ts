@@ -2,7 +2,9 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
 import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'popup',
-  styles : [`.overlay {
+  styles :  [
+      `
+.overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -42,7 +44,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   top: 8px;
   right: 8px;
   font-size: 1.2em;
-}`],
+}`
+],
     template: `
         <div *ngIf="visible" class="dialog">
         <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>

@@ -10,9 +10,8 @@ import { LiaService } from "../lia.service";
     ],
     template: `        
     <div class="col-md-12">
-    <div class="name-ticket col-xs-3 col-md-3">
-    <div>{{this.package?.ProductName}}</div>
-       
+    <div class="name-ticket col-xs-3 col-md-3"> <div>{{this.package?.ProductName}}</div>
+
 </div>
         <div class="bord col-xs-9 col-md-9">
             <div class="position-relative">
@@ -40,11 +39,6 @@ export class PackageComponent  {
     
    
     constructor( public service: LiaService) {
-        
-
-        
-       
-
     }
 
     
