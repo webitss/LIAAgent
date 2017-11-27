@@ -25,18 +25,47 @@ body {
 .yellow{
     color:#f1bf1b;
 }
+.bg-yellow{
+    background:#f1bf1b;
+}
 .green{
     color:#7ec141;
+}
+.bg-green{
+    background:#7ec141;
 }
 .blue{
     color:#16264e;
 }
+.bg-blue{
+    background:#16264e;
+}
+
+.blue-2{
+    color:#2e3092;
+}
+.bg-blue-2{
+    background:#2e3092;
+}
+
+
 .pink{
     color:#e12468;
 }
 
-.lighr-blue{
+.bg-pink{
+    background:#e12468;
+}
+
+.light-blue{
     color:#49bbd3;
+}
+.bg-light-blue{
+    background:#49bbd3;
+}
+
+.bg-red{
+    background:#ed1c24;
 }
 
 /* end-color */
@@ -341,6 +370,7 @@ color: #f1bf1c;}
   .app-products{
       display:inline-block ;
       margin: 3%;
+      vertical-align: top;
   }
 
   .app-products p{
@@ -348,10 +378,10 @@ color: #f1bf1c;}
     width: 100px;
     text-align: center;
     margin: 0;
+    hyphens: none;
   }
 
   .bg-icon-app-products{
-      background:green;
       height: 100px;
       width: 100px;
       text-align: center;
