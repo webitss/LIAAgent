@@ -5,17 +5,17 @@ import {LiaService} from "../lia.service";
     selector: 'packagesComponent',
     styles: [],
     template: `
-    <div>
-    <table>
+    <div class="container-lia container">
+    <table style="width:100%;">
     <tr>
     <td>
-    <package  [packageInput]="this.service.packages[0]"></package>
+    <package  [package]="this.service.packages[0]" ></package>
     </td>
     <td>
-    <package  [packageInput]="this.service.packages[1]"></package>
+    <package  [package]="this.service.packages[1]"></package>
     </td>
     <td>
-    <package  [packageInput]="this.service.packages[2]"></package>
+    <package  [package]="this.service.packages[2]"></package>
     </td>
     </tr>
     </table>
@@ -27,7 +27,7 @@ export class PackagesComponent {
 
 
 constructor(public service: LiaService){
-
+this.service.nowComponent="חבילות";
 }
  
 }

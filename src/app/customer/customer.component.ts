@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LiaService } from '../lia.service';
 
 @Component({
   selector: 'app-customer',
@@ -32,7 +33,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:LiaService) { 
+    this.service.nowComponent="לקוחות";
+  }
 
   ngOnInit() {
   }

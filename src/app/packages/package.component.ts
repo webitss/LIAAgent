@@ -12,18 +12,18 @@ import { LiaService } from "../lia.service";
     <div class="col-md-12">
     
     <div class="name-ticket col-xs-3 col-md-3">
-    <div>{{this.service.package?.ProductName}}</div>
+    <div>{{this.package?.ProductName}}</div>
        
 </div>
         <div class="bord col-xs-9 col-md-9">
             <div class="position-relative">
-            <span class="TicketsNum-inner"> {{this.service.package?.TicketsNum}}</span>
+            <span class="TicketsNum-inner"> {{this.package?.TicketsNum}}</span>
             <div class="ticket-sub">כרטיסים</div>
         </div>
      <div class="Line-buffer"></div>
    <div>
    
-   <div class="ticket-cost">{{this.service.package?.TicketCost}}</div>
+   <div class="ticket-cost">{{this.package?.TicketCost}}</div>
    <div class="ticket-cost-text">
    <span>שקל</span><br/>
    <span>לכרטיס</span><br/>
@@ -34,30 +34,18 @@ import { LiaService } from "../lia.service";
  
 </div>
 
-
-
-    
-   
-
-           
-
-           
-        
-    `
+ `
 })
 export class PackageComponent  {
     
    
     constructor( public service: LiaService) {
         
-        console.log(this.service.packages);
-        this.service.package=this.packageInput;
-        console.log(this.packageInput);
-        console.log(this.service.package);
-
+        
+       
 
     }
-    @Input() packageInput: any;
+    @Input() package: any;
     
 
 }

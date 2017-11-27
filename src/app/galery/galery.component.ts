@@ -26,13 +26,13 @@ import {LiaService} from "../lia.service";
 export class GaleryComponent implements OnInit {
     i:number;
     constructor(public service: LiaService) {
-       // this.myPictures=new Array();
+      this.service.nowComponent="גלריה";
         this.i=0;
-        //this.myPictures = service.galeryPictures;
+        
        
     }
    
-    //myPictures:any[];
+    
     ngOnInit() {
 
     }

@@ -19,9 +19,9 @@ import {MenuComponent} from "./menu.component";
 import {LiaService} from "./lia.service";
 import {LiaProxy} from "./proxy";
 import {HttpClientModule} from "@angular/common/http";
-import {AppService} from "./app.service";
 import {ProductDetailsComponent} from "./products/productDetails.component";
 import {videoComponentComponent} from "./packages/video.component";
+import { PackageSelectedComponent } from './packages/packageSelected.component';
 
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
@@ -35,7 +35,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     declarations: [
         AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
-        PackagesComponent,PackageComponent
+        PackagesComponent,PackageComponent,PackageSelectedComponent
     ],
     imports: [
             BrowserModule,HttpModule,HttpClientModule, 
@@ -44,6 +44,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
+                {path: 'packageSelected', component: PackageSelectedComponent},
                 {path: 'productDetails', component: ProductDetailsComponent},
                 //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
                 {path: 'product', component: ProductsComponent},
@@ -54,7 +55,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 
         ])
     ],
-    providers: [AppService,LiaService,LiaProxy,
+    providers: [LiaService,LiaProxy,
         {
             provide: AuthHttp,
             useFactory: authHttpServiceFactory,

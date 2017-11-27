@@ -13,6 +13,7 @@ export class LiaService {
     customers:any[];
     nowComponent:String;
     product:any;
+    
     constructor(private proxy: LiaProxy) {
         this.galeryPictures=new Array();
         this.products=new Array();
