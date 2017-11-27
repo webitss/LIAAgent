@@ -9,13 +9,13 @@ import {LiaService} from "../lia.service";
     <table style="width:100%;">
     <tr>
     <td>
-    <package  [packageInput]="this.service.packages[0]"></package>
+    <package  [package]="this.service.packages[0]"></package>
     </td>
     <td>
-    <package  [packageInput]="this.service.packages[1]"></package>
+    <package  [package]="this.service.packages[1]"></package>
     </td>
     <td>
-    <package  [packageInput]="this.service.packages[2]"></package>
+    <package  [package]="this.service.packages[2]"></package>
     </td>
     </tr>
     </table>

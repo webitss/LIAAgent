@@ -44,9 +44,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
-                {path: 'productDetails', component: ProductDetailsComponent},
-                //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
                 {path: 'product', component: ProductsComponent},
+                {path: 'productDetails', component: ProductDetailsComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
                 {path: 'enter', component: EnterComponent}

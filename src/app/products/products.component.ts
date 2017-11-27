@@ -92,7 +92,7 @@ export class ProductsComponent implements OnInit {
     goTo(product:String)
     {
         /*this.service.post();*/
-        this.service.changeCurrentProduct(product)
         this.router.navigate(['productDetails']);
+        this.service.changeCurrentProduct(product)
     }
 }
