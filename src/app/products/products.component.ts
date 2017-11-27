@@ -81,7 +81,9 @@ import {AppService} from "../app.service";
 })
 export class ProductsComponent implements OnInit {
 
-    constructor(public router:Router,public service:AppService) { }
+    constructor(public router:Router,public service:AppService) {
+        
+     }
 
     ngOnInit() {
     }

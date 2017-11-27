@@ -10,11 +10,21 @@ import {noUndefined} from "@angular/compiler/src/util";
     template: `
         <div class="container-lia container">
             <table style="width:100%;">
-                <td *ngFor="let p of service.packages let i =index">
+                <td>
                     <div >
-                        <package [package]="p" (click)="edit(i)" [routerLink]="p?.ProductId"></package>
+                    <package [package]="service.packages[0]" (click)="edit(i)" [routerLink]="service.packages[0]?.ProductId"></package>
                     </div>
                 </td>
+               <td>
+                    <div> 
+                    <package [package]="service.packages[1]" (click)="edit(i)" [routerLink]="service.packages[1]?.ProductId"></package>
+                    </div>
+               </td>
+               <td>
+                   <div> 
+                   <package [package]="service.packages[2]" (click)="edit(i)" [routerLink]="service.packages[2]?.ProductId"></package>
+                   </div>
+               </td>
             </table>
         </div>
     `
@@ -23,10 +33,7 @@ export class Package3Component {
 
 
     constructor(public service: LiaService) {
-        if (service.packages === undefined) {
-            this.service.post("GetPackages");
-            service.packages = service.temp;
-        }
+       
     }
 
     edit(i: number) {

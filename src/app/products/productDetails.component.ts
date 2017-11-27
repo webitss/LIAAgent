@@ -23,19 +23,15 @@ import {AppService} from "../app.service";
      }`
     ],
     template: `
-      <div class="div"><img [src]="this.myPictures[i]" class="img" />
+      <div class="div"><img [src]="service.products[i]" class="img" />
           <p>{{this.service.thisProduct}}</p>
       </div>
 `})
 export class ProductDetailsComponent {
-    myPictures:String[]=[];
+   // myPictures:String[]=[];
     i:number=0;
     constructor(public service:AppService)
     {
-        this.i=this.service.currentProduct;
-        this.myPictures.push("assets/pictures/bomb2.jpg");
-        this.myPictures.push("assets/pictures/childish.jpg");
-        this.myPictures.push("assets/pictures/houses.jpg");
-        this.myPictures.push("assets/pictures/arrow.jpg");
+        
     }
 }

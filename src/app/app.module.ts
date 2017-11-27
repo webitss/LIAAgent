@@ -36,26 +36,30 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
         AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,Package3Component,PackageComponent,PackageDetailsComponent
     ],
     imports: [
-        BrowserModule,HttpModule,HttpClientModule, RouterModule.forRoot([
-            {path: '', component: LogoComponent, children:[{path: 'login', component: LoginComponent}]},
-            {path: 'menu', component: MenuComponent, children:[
+            BrowserModule,HttpModule,HttpClientModule, 
+            RouterModule.forRoot([
+                {path: '', component: LogoComponent, children:[{path: 'login', component: LoginComponent}]},
+                {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages3', component: Package3Component},
-                {path: 'packages3/:ProductId', component: PackageDetailsComponent},
+                {path: 'packages3/:ProductId', component: PackageComponent},
+                //{path: 'packages3/:ProductId', component: PackageDetailsComponent},
                 {path: 'productDetails', component: ProductDetailsComponent},
                 {path: 'packages3/:ProductId/video', component: videoComponentComponent},
                 {path: 'product', component: ProductsComponent},
                 {path: 'customer', component: CustomerComponent},
-                {path: 'cart', component: CartComponent},{path: 'enter', component: EnterComponent}, {path: '', component: EnterComponent}]}
+                {path: 'cart', component: CartComponent},
+                {path: 'enter', component: EnterComponent}
+            ]}
 
         ])
     ],
-    providers: [AppService,LiaService,LiaProxy/*,
+    providers: [AppService,LiaService,LiaProxy,
         {
             provide: AuthHttp,
             useFactory: authHttpServiceFactory,
             deps: [Http, RequestOptions]
-        }*/],
+        },AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

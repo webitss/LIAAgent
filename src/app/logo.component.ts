@@ -6,12 +6,10 @@ import {Router} from '@angular/router';
     selector: 'logo',
     template: ` 
     <div class="bg-login" id="body">
-
     <div>
     <img src="assets/pictures/logo-login.png"/>
     </div>
         <button routerLink="/login" (click)="mini()" >---></button>
-
     </div>
    
         <router-outlet></router-outlet>

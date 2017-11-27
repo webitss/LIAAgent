@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
        
         <div class="myHeader">
         <div class="col-md-4 col-xs-4">
-            <img src="assets/pictures/logo-header.png" class="logo-header"/>
+            <img src="assets/pictures/logo-header.png" class="logo-header" (click)="this.goTo()"/>
             </div>
             <div class="col-md-4 col-xs-4">
             <p class="header-name">{{thisComponent}}</p>
@@ -17,7 +17,7 @@ import {Router} from "@angular/router";
             <div class="col-md-4 col-xs-4">
             <div class="user-name">
             <span>ינון שיבולי</span>
-            <i class="icon-user-11" (click)="this.goTo()"></i>
+            <i class="icon-user-11" ></i>
             </div>
             </div>
         </div>
@@ -152,6 +152,6 @@ export class MenuComponent {
 
     //go to the enter class
     goTo() {
-        this.router.navigate(['enter']);
+        this.router.navigate(['menu/enter']);
     }
 }

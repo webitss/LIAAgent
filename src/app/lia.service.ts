@@ -4,15 +4,51 @@ import {LiaProxy} from "./proxy";
 @Injectable()
 export class LiaService {
 
-    temp: any[];
     packages: any[];
-    galery: any[];
+    galeryPictures:any[];
     src:string;
-
+    source:String;
+    getData:any;
+    products:any[];
+    customers:any[];
+    nowComponent:String;
+    product:any;
     constructor(private proxy: LiaProxy) {
-        this.temp = new Array();
+        this.galeryPictures=new Array();
+        this.products=new Array();
+        this.customers=new Array();
+        this.packages = new Array();
+        this.post("GetGaleryPictures");
+        this.post("GetAdditionalProducts");
+        this.post("GetPackages");
+        console.log(this.galeryPictures);
+        console.log(this.packages);
+        console.log(this.products);
     }
 
+    async post(func: string): Promise<any> {
+          await this.proxy.post(func).then((res) => {
+            this.getData = res;
+            for (let i=0;i<this.getData.Result.length;i++)
+            {
+                switch (func)
+            {
+                case "GetAdditionalProducts":
+                    this.products[i]=this.getData.Result[i];
+                    break;
+                case "GetGaleryPictures" :
+                    this.galeryPictures[i]=this.getData.Result[i];
+                    break;
+                case "GetPackages":
+                this.packages[i] = this.getData.Result[i];
+                break;
+            }
+           }
+           
+           
+            //return this.packages[0];
+        }).catch(() => console.log("error"));
+    }
     getPackageById(id: number): any {
         console.log(this.packages.length);
         for(let i=0;i<this.packages.length;i++)
@@ -21,19 +57,76 @@ export class LiaService {
 
     }
 
-    getData: any;
-
-    async post(func: string): Promise<any> {
-        this.temp = new Array();
-        await this.proxy.post(func).then((res) => {
-            this.getData = res;
-            for (let i = 0; i < this.getData.Result.length; i++) {
-                this.temp[i] = this.getData.Result[i];
+    getProductById(id:number)
+    {
+        for (let i=0;i<this.products.length;i++)
+        {
+            console.log(this.products[i].ProductId+" "+id);
+            if(this.products[i].ProductId==id)
+            {
+                this.product=this.products[i];
+                i=this.products.length;
             }
-            //return this.packages[0];
+        }
+
+   }
+}
+
+
+
+
+
+
+
+
+/*packages: any[];
+    //ListShell<ProductAdditionalObj>
+    constructor(private proxy: LiaProxy) {
+        this.galeryPictures=new Array();
+        this.products=new Array();
+        this.customers=new Array();
+    }
+    source:String;
+    getData:any;
+    galeryPictures:any[];
+    products:any[];
+    customers:any[];
+    nowComponent:String;
+    async post(postFunction:String):Promise<any> {
+        await this.proxy.post(postFunction).then((res) => {
+            this.getData=res;
+            console.log(this.getData);
+            for (let i=0;i<this.getData.Result.length;i++)
+            {
+                switch (postFunction)
+            {
+                case "GetAdditionalProducts":
+                    this.products[i]=this.getData.Result[i];
+                    console.log(this.products);
+                    break;
+                case "GetGaleryPictures" :
+                    this.galeryPictures[i]=this.getData.Result[i];
+                    console.log(this.galeryPictures);
+                    break;
+            }
+
+           }
         }).catch(() => console.log("error"));
     }
-}
+    product:any;
+    getProductById(id:number)
+    {
+        for (let i=0;i<this.products.length;i++)
+        {
+            console.log(this.products[i].ProductId+" "+id);
+            if(this.products[i].ProductId==id)
+            {
+                this.product=this.products[i];
+                i=this.products.length;
+            }
+        }
+
+   } */
 
 
 

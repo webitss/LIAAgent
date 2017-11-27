@@ -11,7 +11,7 @@ import {LiaService} from "../lia.service";
             </div>
 
             <div class="myDiv col-md-8">
-             <div><img class="slide-img-galery" [src]=service.galery[i]></div>
+             <div><img class="slide-img-galery" [src]=this.service.galeryPictures[i]></div>
              </div>
 
             <div class="col-md-2 arrow-img-galery">
@@ -26,24 +26,13 @@ import {LiaService} from "../lia.service";
 export class GaleryComponent implements OnInit {
     i:number;
     constructor(public service: LiaService) {
+       // this.myPictures=new Array();
         this.i=0;
-        if (service.galery === undefined) {
-            this.service.post("GetGaleryPictures");
-            service.galery = service.temp;
-        }
+        //this.myPictures = service.galeryPictures;
+       
     }
-   /* constructor( ) {
-
-
-        this.i=0;
-
-        //this.myPictures.push()
-        this.myPictures.push("assets/pictures/bomb2.jpg");
-        this.myPictures.push("assets/pictures/childish.jpg");
-        this.myPictures.push("assets/pictures/houses.jpg");
-        this.myPictures.push("assets/pictures/arrow.jpg");
-    }*/
-    myPictures:String[]=[];
+   
+    //myPictures:any[];
     ngOnInit() {
 
     }
@@ -51,7 +40,7 @@ export class GaleryComponent implements OnInit {
     {
         if(right)
         {
-            if(this.i<this.myPictures.length-1)
+            if(this.i<this.service.galeryPictures.length-1)
                 this.i++;
         }
         else {
