@@ -25,7 +25,7 @@ import { LiaService } from "../lia.service";
     ],
     template: `
       <div class="div"><img [src]="service.products[i]" class="img" />
-          <p>{{this.service.thisProduct}}</p>
+         
       </div>
 `})
 export class ProductDetailsComponent {
@@ -36,3 +36,5 @@ export class ProductDetailsComponent {
         
     }
 }
+
+

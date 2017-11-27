@@ -38,13 +38,14 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
         PackagesComponent,PackageComponent,PackageSelectedComponent
     ],
     imports: [
-            BrowserModule,HttpModule,HttpClientModule, 
+            BrowserModule,HttpModule,
+            HttpClientModule, 
             RouterModule.forRoot([
                 {path: '', component: LogoComponent, children:[{path: 'login', component: LoginComponent}]},
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
-                {path: 'packageSelected', component: PackageSelectedComponent},
+                {path: 'packages/:productId', component: PackageSelectedComponent},
                 {path: 'productDetails', component: ProductDetailsComponent},
                 //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
                 {path: 'product', component: ProductsComponent},
@@ -61,6 +62,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
             useFactory: authHttpServiceFactory,
             deps: [Http, RequestOptions]
         },AuthService],
+    exports:[RouterModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {
