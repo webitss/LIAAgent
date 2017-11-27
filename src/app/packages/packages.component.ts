@@ -7,6 +7,7 @@ import {LiaService} from "../lia.service";
     template: `
     <div>
     <table>
+    <tr>
     <td>
     <package  [packageInput]="this.service.packages[0]"></package>
     </td>
@@ -16,7 +17,9 @@ import {LiaService} from "../lia.service";
     <td>
     <package  [packageInput]="this.service.packages[2]"></package>
     </td>
+    </tr>
     </table>
+
     </div>
     `
 })
