@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {AppService} from "../app.service";
+import { LiaService } from "../lia.service";
+
 
 @Component({
     selector: 'productDetails',
@@ -30,7 +31,7 @@ import {AppService} from "../app.service";
 export class ProductDetailsComponent {
    // myPictures:String[]=[];
     i:number=0;
-    constructor(public service:AppService)
+    constructor(public service:LiaService)
     {
         
     }
