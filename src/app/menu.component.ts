@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
             <img src="assets/pictures/logo-header.png" class="logo-header"/>
             </div>
             <div class="col-md-4 col-xs-4">
-            <p class="header-name">{{thisComponent}}</p>
+            <div class="header-name"><span class="">{{thisComponent}}</span></div>
             </div>
             <div class="col-md-4 col-xs-4">
             <div class="user-name">
