@@ -25,23 +25,23 @@ import { LiaService } from "./lia.service";
         <footer class="menu-footer">
             
            <ul>
-            <li routerLink="galery" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('galery')">
+            <li routerLink="galery" class="hoverbtn effect-8 btn-footer">
             <i class="icon-image-10"></i>
             </li>
 
-            <li routerLink="packages" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
+            <li routerLink="packages" class="hoverbtn effect-8 btn-footer" >
             <i class="icon-menu-09"></i>
             </li>
 
-            <li routerLink="product" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('products')">
+            <li routerLink="product" class="hoverbtn effect-8 btn-footer" >
             <i class="icon-bag-08"></i>
             </li>
 
-            <li routerLink="customer" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('customers')">
+            <li routerLink="customer" class="hoverbtn effect-8 btn-footer" >
             <i class="icon-people-07"></i>
             </li>
 
-            <li routerLink="cart" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('cart')">
+            <li routerLink="cart" class="hoverbtn effect-8 btn-footer" >
             <div class="alert-number">2</div>
              <i class="icon-Cart-06"></i>
              </li>

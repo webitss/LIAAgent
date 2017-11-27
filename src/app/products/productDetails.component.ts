@@ -24,8 +24,8 @@ import { LiaService } from "../lia.service";
      }`
     ],
     template: `
-      <div class="div"><img [src]="service.products[i]" class="img" />
-          <p>{{this.service.thisProduct}}</p>
+      <div class="div">
+          {{this.service.thisProductDetails.ProductId}}          
       </div>
 `})
 export class ProductDetailsComponent {
@@ -36,3 +36,9 @@ export class ProductDetailsComponent {
         
     }
 }
+/*
+{{this.service.thisProductDetails.ProductId}}
+    {{this.service.thisProductDetails | json}}
+    <img [src]="this.thisProductDetails.pictureUrl" class="img"/>
+*/
+//   <img [src]="service.products[i]" class="img" />

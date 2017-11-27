@@ -9,11 +9,7 @@ import {LiaService} from "../lia.service";
     <table style="width:100%;">
     <tr>
     <td>
-<<<<<<< HEAD
-    <package  [package]="this.service.packages[0]"></package>
-=======
     <package  [package]="this.service.packages[0]" ></package>
->>>>>>> 520436bd3403e0975c822cbdbab1ae26a152bb47
     </td>
     <td>
     <package  [package]="this.service.packages[1]"></package>

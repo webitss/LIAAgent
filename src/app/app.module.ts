@@ -21,7 +21,6 @@ import {LiaProxy} from "./proxy";
 import {HttpClientModule} from "@angular/common/http";
 import {ProductDetailsComponent} from "./products/productDetails.component";
 import {videoComponentComponent} from "./packages/video.component";
-import { PackageSelectedComponent } from './packages/packageSelected.component';
 
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
@@ -35,7 +34,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     declarations: [
         AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
-        PackagesComponent,PackageComponent,PackageSelectedComponent
+        PackagesComponent,PackageComponent
     ],
     imports: [
             BrowserModule,HttpModule,HttpClientModule, 
@@ -44,17 +43,11 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
-<<<<<<< HEAD
-=======
-                {path: 'packageSelected', component: PackageSelectedComponent},
                 {path: 'productDetails', component: ProductDetailsComponent},
-                //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
->>>>>>> 520436bd3403e0975c822cbdbab1ae26a152bb47
                 {path: 'product', component: ProductsComponent},
-                {path: 'productDetails', component: ProductDetailsComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
-                {path: 'enter', component: EnterComponent}
+                {path: 'enter', component: EnterComponent},                    
             ]}
 
         ])

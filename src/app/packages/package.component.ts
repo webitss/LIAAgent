@@ -11,11 +11,8 @@ import { LiaService } from "../lia.service";
     template: `        
     <div class="col-md-12">
     
-<<<<<<< HEAD
-<div class="name-ticket col-xs-3 col-md-3">
-=======
     <div class="name-ticket col-xs-3 col-md-3">
->>>>>>> 520436bd3403e0975c822cbdbab1ae26a152bb47
+
     <div>{{this.package?.ProductName}}</div>
        
 </div>
@@ -45,8 +42,6 @@ export class PackageComponent  {
     
    
     constructor( public service: LiaService) {
-        
-<<<<<<< HEAD
         // console.log(this.service.packages[0]);
         // this.service.package=this.packageInput;
         // console.log(this.packageInput);
@@ -55,16 +50,15 @@ export class PackageComponent  {
 
     }
     //@Input() packageInput: any;
-=======
+
         
        
 
     }
-    @Input() package: any;
->>>>>>> 520436bd3403e0975c822cbdbab1ae26a152bb47
-    
 
-}
+
+
+
 
 
 
