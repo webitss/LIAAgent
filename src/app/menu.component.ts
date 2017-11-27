@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
             <img src="assets/pictures/logo-header.png" class="logo-header" (click)="this.goTo()"/>
             </div>
             <div class="col-md-4 col-xs-4">
-            <p class="header-name">{{thisComponent}}</p>
+            <div class="header-name"><span class="">{{thisComponent}}</span></div>
             </div>
             <div class="col-md-4 col-xs-4">
             <div class="user-name">
@@ -28,27 +28,28 @@ import {Router} from "@angular/router";
             
            <ul>
             <li routerLink="galery" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('galery')">
-            <span>גלריה </span>
             <i class="icon-image-10"></i>
             </li>
            
+<<<<<<< HEAD
             <li routerLink="packages" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
             <span>חבילות </span>
+=======
+            <li routerLink="packages3" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
+>>>>>>> 3738949ea9a32ec1a321ed7253466b90af3801fa
             <i class="icon-menu-09"></i>
             </li>
 
             <li routerLink="product" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('products')">
-            מוצרים
             <i class="icon-bag-08"></i>
             </li>
 
             <li routerLink="customer" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('customers')">
-            לקוחות
             <i class="icon-people-07"></i>
             </li>
 
             <li routerLink="cart" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('cart')">
-            <span>סל</span>
+            <div class="alert-number">2</div>
              <i class="icon-Cart-06"></i>
              </li>
 
