@@ -5,8 +5,8 @@ import {LiaService} from "../lia.service";
     selector: 'packagesComponent',
     styles: [],
     template: `
-    <div>
-    <table>
+    <div class="container-lia container">
+    <table style="width:100%;">
     <tr>
     <td>
     <package  [packageInput]="this.service.packages[0]"></package>
