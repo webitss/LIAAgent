@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-cart',
   template: `
-    <p>
-      cart works!yfnbgbfhd
-    </p>
+  <div class="container-lia container ">
+  </div>
+  
   `,
   styles: []
 })
