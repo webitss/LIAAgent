@@ -11,7 +11,7 @@ import { LiaService } from "../lia.service";
     template: `        
     <div class="col-md-12">
     
-<div class="name-ticket col-xs-3 col-md-3">
+    <div class="name-ticket col-xs-3 col-md-3">
     <div>{{this.service.package?.ProductName}}</div>
        
 </div>

@@ -30,13 +30,8 @@ import {Router} from "@angular/router";
             <li routerLink="galery" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('galery')">
             <i class="icon-image-10"></i>
             </li>
-           
-<<<<<<< HEAD
+
             <li routerLink="packages" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
-            <span>חבילות </span>
-=======
-            <li routerLink="packages3" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
->>>>>>> 3738949ea9a32ec1a321ed7253466b90af3801fa
             <i class="icon-menu-09"></i>
             </li>
 
