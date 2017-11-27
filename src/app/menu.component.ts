@@ -32,7 +32,7 @@ import {Router} from "@angular/router";
             <i class="icon-image-10"></i>
             </li>
            
-            <li routerLink="packages3" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
+            <li routerLink="packages" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
             <span>חבילות </span>
             <i class="icon-menu-09"></i>
             </li>

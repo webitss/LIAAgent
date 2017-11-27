@@ -11,9 +11,8 @@ import { GaleryComponent } from './galery/galery.component';
 import { ProductsComponent } from './products/products.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CartComponent } from './cart/cart.component';
-import {Package3Component} from "./packages/package3.component";
+import {PackagesComponent} from "./packages/packages.component";
 import {PackageComponent} from "./packages/package.component";
-import {PackageDetailsComponent} from "./packages/packageDetails.component";
 import {EnterComponent} from "./enter.component";
 import {LogoComponent} from "./logo.component";
 import {MenuComponent} from "./menu.component";
@@ -24,6 +23,7 @@ import {AppService} from "./app.service";
 import {ProductDetailsComponent} from "./products/productDetails.component";
 import {videoComponentComponent} from "./packages/video.component";
 
+
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     return new AuthHttp(new AuthConfig({
         tokenGetter: (() => localStorage.getItem('access_token'))
@@ -33,7 +33,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 
 @NgModule({
     declarations: [
-        AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,Package3Component,PackageComponent,PackageDetailsComponent
+        AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
+        GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
+        PackagesComponent,PackageComponent
     ],
     imports: [
             BrowserModule,HttpModule,HttpClientModule, 
@@ -41,11 +43,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: '', component: LogoComponent, children:[{path: 'login', component: LoginComponent}]},
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
-                {path: 'packages3', component: Package3Component},
-                {path: 'packages3/:ProductId', component: PackageComponent},
-                //{path: 'packages3/:ProductId', component: PackageDetailsComponent},
+                {path: 'packages', component: PackagesComponent},
                 {path: 'productDetails', component: ProductDetailsComponent},
-                {path: 'packages3/:ProductId/video', component: videoComponentComponent},
+                //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
                 {path: 'product', component: ProductsComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},

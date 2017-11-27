@@ -3,7 +3,7 @@ import {LiaProxy} from "./proxy";
 
 @Injectable()
 export class LiaService {
-
+    package:any;
     packages: any[];
     galeryPictures:any[];
     src:string;
