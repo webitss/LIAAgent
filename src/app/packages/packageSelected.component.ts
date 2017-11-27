@@ -6,9 +6,24 @@ import {Router } from "@angular/router";
 
 @Component({
     selector: 'packageSelectedComponent',
-    styles: [],
+    styles: [
+        `
+        #divLeft{
+            left="50px";
+        }
+        `
+    ],
     template: `
     
+       <package [package]="this.nowPackage"></package>
+       <div class="container-lia container">
+       <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
+         {{p.ParentProductId}}
+         {{p.ProductId}}
+         {{p.ProductName}}
+         <i class="icon-arrow-left-03"></i>
+       </div>
+   </div>
     `
 })
 export class PackageSelectedComponent implements OnDestroy{
@@ -23,7 +38,8 @@ export class PackageSelectedComponent implements OnDestroy{
                 this.sub=route.params.subscribe(params=>{
                     this.id=params['productId'];
              });
-                this.nowPackage=this.service.getPackageById(this.id)
+                this.nowPackage=this.service.getPackageById(this.id);
+                console.log(this.nowPackage);
     }
  
 }

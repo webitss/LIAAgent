@@ -10,7 +10,6 @@ import { LiaService } from "../lia.service";
     ],
     template: `        
     <div class="col-md-12">
-    
     <div class="name-ticket col-xs-3 col-md-3">
     <div>{{this.package?.ProductName}}</div>
        
@@ -37,15 +36,17 @@ import { LiaService } from "../lia.service";
  `
 })
 export class PackageComponent  {
+    @Input() package: any;
     
    
     constructor( public service: LiaService) {
         
+
         
        
 
     }
-    @Input() package: any;
+
     
 
 }

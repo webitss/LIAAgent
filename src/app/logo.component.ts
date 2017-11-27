@@ -19,7 +19,7 @@ import {Router} from '@angular/router';
 
 
         <button routerLink="/login" (click)="mini()" class="arrow-login-open"><i class="icon-arrow-right-02 "></i></button>
-<div class="gradient-color"></div>
+        <div class="gradient-color"></div>
 
     </div>
    

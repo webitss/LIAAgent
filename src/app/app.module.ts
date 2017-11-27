@@ -22,6 +22,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ProductDetailsComponent} from "./products/productDetails.component";
 import {videoComponentComponent} from "./packages/video.component";
 import { PackageSelectedComponent } from './packages/packageSelected.component';
+import { PopupComponent } from './popups/popup.component';
 
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
@@ -35,7 +36,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     declarations: [
         AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
-        PackagesComponent,PackageComponent,PackageSelectedComponent
+        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent
     ],
     imports: [
             BrowserModule,HttpModule,
@@ -46,9 +47,11 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
                 {path: 'packages/:productId', component: PackageSelectedComponent},
+                {path: 'packageSelected', component: PackageSelectedComponent},
                 {path: 'productDetails', component: ProductDetailsComponent},
                 //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
                 {path: 'product', component: ProductsComponent},
+                {path: 'productDetails', component: ProductDetailsComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
                 {path: 'enter', component: EnterComponent}

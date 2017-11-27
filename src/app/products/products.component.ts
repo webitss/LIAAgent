@@ -94,5 +94,6 @@ export class ProductsComponent implements OnInit {
     {
         /*this.service.post();*/
         this.router.navigate(['productDetails']);
+        
     }
 }
