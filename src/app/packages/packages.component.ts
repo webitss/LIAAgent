@@ -9,13 +9,17 @@ import {LiaService} from "../lia.service";
     <table style="width:100%;">
     <tr>
     <td>
-    <package  [packageInput]="this.service.packages[0]"></package>
+<<<<<<< HEAD
+    <package  [package]="this.service.packages[0]"></package>
+=======
+    <package  [package]="this.service.packages[0]" ></package>
+>>>>>>> 520436bd3403e0975c822cbdbab1ae26a152bb47
     </td>
     <td>
-    <package  [packageInput]="this.service.packages[1]"></package>
+    <package  [package]="this.service.packages[1]"></package>
     </td>
     <td>
-    <package  [packageInput]="this.service.packages[2]"></package>
+    <package  [package]="this.service.packages[2]"></package>
     </td>
     </tr>
     </table>
@@ -27,7 +31,7 @@ export class PackagesComponent {
 
 
 constructor(public service: LiaService){
-
+this.service.nowComponent="חבילות";
 }
  
 }

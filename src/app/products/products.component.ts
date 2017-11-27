@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {AppService} from "../app.service";
+import { LiaService } from '../lia.service';
+
 
 @Component({
     selector: 'app-products',
@@ -83,8 +84,8 @@ import {AppService} from "../app.service";
 })
 export class ProductsComponent implements OnInit {
 
-    constructor(public router:Router,public service:AppService) {
-        
+    constructor(public router:Router,public service:LiaService) {
+        this.service.nowComponent="מוצרים";
      }
 
     ngOnInit() {
@@ -92,7 +93,7 @@ export class ProductsComponent implements OnInit {
     goTo(product:String)
     {
         /*this.service.post();*/
-        this.service.changeCurrentProduct(product)
         this.router.navigate(['productDetails']);
+        this.service.changeCurrentProduct(product)
     }
 }

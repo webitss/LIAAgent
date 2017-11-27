@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
-import {AppService} from "./app.service";
 import {Router} from "@angular/router";
+import { LiaService } from "./lia.service";
 
 @Component({
     //selector: 'menu',
@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
             <img src="assets/pictures/logo-header.png" class="logo-header" (click)="this.goTo()"/>
             </div>
             <div class="col-md-4 col-xs-4">
-            <div class="header-name"><span class="">{{thisComponent}}</span></div>
+            <div class="header-name"><span class="">{{this.service.nowComponent}}</span></div>
             </div>
             <div class="col-md-4 col-xs-4">
             <div class="user-name">
@@ -22,15 +22,13 @@ import {Router} from "@angular/router";
             </div>
         </div>
 
-       
-
         <footer class="menu-footer">
             
            <ul>
             <li routerLink="galery" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('galery')">
             <i class="icon-image-10"></i>
             </li>
-           
+
             <li routerLink="packages" class="hoverbtn effect-8 btn-footer" (click)="this.currentComponent('packages')">
             <i class="icon-menu-09"></i>
             </li>
@@ -118,33 +116,13 @@ import {Router} from "@angular/router";
     ]
 })
 export class MenuComponent {
-    thisComponent: String;
+    
 
-    constructor(public service: AppService, public router: Router) {
+    constructor(public service: LiaService, public router: Router) {
 
     }
 
-    currentComponent(mystring) {
-        this.service.changeCurrentComponent(mystring);
-        switch (this.service.currentComponent) {
-            case 0:
-                this.thisComponent = "galery";
-                break;
-            case 1:
-                this.thisComponent = "packages";
-                break;
-            case 2:
-                this.thisComponent = "products";
-                break;
-            case 3:
-                this.thisComponent = "customers";
-                break;
-            case 4:
-                this.thisComponent = "cart";
-                break;
-
-        }
-    }
+    
 
     //go to the enter class
     goTo() {
