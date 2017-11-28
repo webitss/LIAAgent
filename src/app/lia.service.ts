@@ -19,20 +19,29 @@ export class LiaService {
     isPackageProductDetailed:boolean;
     packageProduct:any;
     cart: number = 0;    
+    productsOfCart: any[];
+    packagesOfCart: any[];
+    
+
+
+
     constructor(private proxy: LiaProxy, public router: Router) {
         this.galeryPictures=new Array();
         this.products=new Array();
         this.customers=new Array();
         this.packages = new Array();
+        this.productsOfCart = new Array();
         this.post("GetGaleryPictures");
         this.post("GetAdditionalProducts");
         this.post("GetPackages");
         this.isPackageProductDetailed=false;
         this.isOuter=true;
         this.isInner=false;
+        this.productsOfCart = this.products;
         console.log(this.galeryPictures);
         console.log(this.packages);
         console.log(this.products);
+        console.log(this.productsOfCart);
     }
 
     async post(func: string): Promise<any> {
@@ -80,8 +89,13 @@ export class LiaService {
                 i=this.products.length;
             }
         }
-
    }
+
+   clickAddToCart(product){
+    this.cart++;
+    this.productsOfCart.push(product);
+}
+
 
 //    goTo(pr:number)
 //    {

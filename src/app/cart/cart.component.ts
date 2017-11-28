@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LiaService } from '../lia.service';
-import { serializePath } from '@angular/router/src/url_tree';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,10 +11,10 @@ import { serializePath } from '@angular/router/src/url_tree';
   <div class="container-lia container">
   <div class="t-center"><i class="icon-arrow-up-05 t-center blue f-size-icon"></i></div>
   
-  <div class="border-bottam-table blue">
-  <span class="col-md-3 col-xs-3">שם העסק</span>
-  <span class="col-md-4 col-xs-4">כתובת</span>
-  <span class="col-md-4 col-xs-4">חבילת כרטסים שברשותו</span>
+  <div class="border-bottam-table blue" *ngFor="let pr of this.service.productsOfCart">
+  <span class="col-md-3 col-xs-3">  {{pr.Duration}}  </span>
+  <span class="col-md-4 col-xs-4">  {{pr.DurationText}} </span>
+  <span class="col-md-4 col-xs-4">  {{pr.Price}}</span>
   <span class="col-md-1 col-xs-1"><i class="icon-arrow-left-03 blue f-size-icon"></i></span>
   </div>
   
@@ -26,7 +26,9 @@ import { serializePath } from '@angular/router/src/url_tree';
   <div class="container-lia container">
   <div class="col-md-8 col col-md-offset-2">
   <button class="btn btn-width bg-light-blue">הוסף / שנה חבילה </button>
+  <a routerLink="../product">
   <button class="btn btn-width bg-pink">הוסף מוצר </button>
+  </a>
   <button class="btn btn-width bg-green">המשך תשלום לקוח קיים </button>
   <button class="btn btn-width bg-blue">המשך לתשלום</button>
 
@@ -39,7 +41,7 @@ import { serializePath } from '@angular/router/src/url_tree';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private service:LiaService) { 
+  constructor(private service:LiaService, public router: Router) { 
 this.service.nowComponent="סל";
   }
 
