@@ -8,25 +8,28 @@ import {Router } from "@angular/router";
     selector: 'packageSelectedComponent',
     styles: [
         `
-     
+        #divLeft{
+            left="50px";
+        }
         `
     ],
     template: `
-    <div class="container-lia container">
-
+    
        <package [package]="this.nowPackage">
-       <div class="">
-       <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
-       <div (click)="this.clicked()">
-       {{p.ParentProductId}}
-       {{p.ProductId}}
-       {{p.ProductName}}
-       <i class="icon-arrow-left-03"></i>
-       </div>
-       </div>
+       <div class="container-lia container">
+            <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
+                            <div (click)="this.clicked()">
+                                    {{p.ParentProductId}}
+                                    {{p.ProductId}}
+                                    {{p.ProductName}}
+                                    <i class="icon-arrow-left-03"></i>
+                            </div>
+            </div>
+            <div></div>
+            
        </div>
        </package>
-     </div>  
+       
   
     `
 })
@@ -39,6 +42,8 @@ export class PackageSelectedComponent implements OnDestroy{
     sub:Subscription;
     id:number;
     constructor(private route:ActivatedRoute,private router:Router,public service: LiaService){
+        this.service.isOuter=false;
+        this.service.isInner=true;
                 this.sub=route.params.subscribe(params=>{
                     this.id=params['productId'];
              });
@@ -49,7 +54,7 @@ export class PackageSelectedComponent implements OnDestroy{
 
     clicked()
     {
-console.log("lllllllllllllllllllllll");
+       console.log("lllllllllllllllllllllll");
     }
  
 }

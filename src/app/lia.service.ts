@@ -25,6 +25,8 @@ export class LiaService {
         this.post("GetGaleryPictures");
         this.post("GetAdditionalProducts");
         this.post("GetPackages");
+        this.isOuter=true;
+        this.isInner=false;
         console.log(this.galeryPictures);
         console.log(this.packages);
         console.log(this.products);
