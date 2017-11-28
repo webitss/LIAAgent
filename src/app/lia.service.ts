@@ -91,9 +91,24 @@ export class LiaService {
         }
    }
 
-   clickAddToCart(product){
+   clickAddToCart(pr){
     this.cart++;
-    this.productsOfCart.push(product);
+    this.productsOfCart.push(pr);
+}
+
+clickDeleteFromCart(pr){
+    let j;
+    for(let i=0; i < this.productsOfCart.length; i++){
+        if(this.productsOfCart[i] == pr){
+            j = i;
+        }
+        
+    }
+    console.log(j);
+    this.productsOfCart.splice(j, 1);
+    if(this.cart > 0)
+    this.cart--;
+    console.log(this.productsOfCart);
 }
 
 

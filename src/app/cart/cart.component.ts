@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   <span class="col-md-3 col-xs-3">  {{pr.Duration}}  </span>
   <span class="col-md-4 col-xs-4">  {{pr.DurationText}} </span>
   <span class="col-md-4 col-xs-4">  {{pr.Price}}</span>
-  <span class="col-md-1 col-xs-1"><i class="icon-arrow-left-03 blue f-size-icon"></i></span>
+  <span class="col-md-1 col-xs-1"><i (click)=" this.service.clickDeleteFromCart(pr.ProductId)">x</i></span>
   </div>
   
   <div class="t-center"><i class="icon-arrow-down-04 t-center blue f-size-icon"></i></div>
@@ -25,7 +25,9 @@ import { Router } from '@angular/router';
   <div class="col-md-6 bg-gray">
   <div class="container-lia container">
   <div class="col-md-8 col col-md-offset-2">
+  <a routerLink="../packages">
   <button class="btn btn-width bg-light-blue">הוסף / שנה חבילה </button>
+  </a>
   <a routerLink="../product">
   <button class="btn btn-width bg-pink">הוסף מוצר </button>
   </a>
