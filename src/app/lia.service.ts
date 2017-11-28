@@ -7,7 +7,6 @@ export class LiaService {
     package:any;
     packages: any[];
     galeryPictures:any[];
-    src:string;
     source:String;
     getData:any;
     products:any[];
@@ -17,6 +16,8 @@ export class LiaService {
     thisProductDetails: any;
     isOuter:boolean;
     isInner:boolean;
+
+
     constructor(private proxy: LiaProxy, public router: Router) {
         this.galeryPictures=new Array();
         this.products=new Array();

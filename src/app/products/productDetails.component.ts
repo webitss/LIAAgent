@@ -28,7 +28,7 @@ import { Router } from "@angular/router";
     ],
 
     template: ` 
-    <input *ngIf="this.service.thisProductDetails.VideoUrl" type="button" value="לצפיה">
+    <a *ngIf="this.service.thisProductDetails.VideoUrl" routerLink="video">לצפיה</a>
     <img [src]="this.service.thisProductDetails.PictureUrl"/>
     <h1>{{this.service.thisProductDetails.Duration}}
     {{this.service.thisProductDetails.DurationText}}    
@@ -64,3 +64,8 @@ export class ProductDetailsComponent {
 */
 //   <img [src]="service.products[i]" class="img" />
 
+<<<<<<< HEAD
+=======
+// this.ProductId = params.ProductId;
+
+>>>>>>> 54c129974e9cb661a807f6c530dcb7290ff75eb3

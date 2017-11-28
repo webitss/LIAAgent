@@ -102,7 +102,7 @@ import { LiaService } from '../lia.service';
 export class ProductsComponent implements OnInit {
 
     constructor(public router:Router,public service:LiaService) {
-        
+        this.service.nowComponent="מוצרים";        
      }
 
     ngOnInit() {
