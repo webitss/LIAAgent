@@ -64,5 +64,8 @@ export class ProductDetailsComponent {
 */
 //   <img [src]="service.products[i]" class="img" />
 
+<<<<<<< HEAD
+=======
 // this.ProductId = params.ProductId;
 
+>>>>>>> 54c129974e9cb661a807f6c530dcb7290ff75eb3
