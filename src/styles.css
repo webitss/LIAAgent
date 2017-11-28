@@ -125,7 +125,7 @@ width: 100%;
  .logo-login-mini{
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 75%;
     transform: translate(-50%, -50%);
  }
 
@@ -137,6 +137,17 @@ width: 100%;
     position: absolute;
     top: 50%;
     left: 5%;
+    transform: translate(-50%, -50%);
+ }
+
+ .arrow-login-open-mini{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
  }
  /* header */
