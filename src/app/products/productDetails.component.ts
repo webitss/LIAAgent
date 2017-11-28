@@ -69,5 +69,3 @@ clickAdd(){
 //   <img [src]="service.products[i]" class="img" />
 
 
-// this.ProductId = params.ProductId;
-

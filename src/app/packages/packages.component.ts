@@ -32,6 +32,7 @@ constructor(public router:Router,public service: LiaService){
 this.service.nowComponent="חבילות";
 this.service.isOuter=true;
 this.service.isInner=false;
+this.service.isPackageProductDetailed=false;
 }
 
 }
