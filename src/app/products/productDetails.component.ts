@@ -38,11 +38,7 @@ import { Router } from "@angular/router";
     מחיר:
     {{this.service.thisProductDetails.Price}} 
     </h2>
-<<<<<<< HEAD
-    <input type="button" value="הוסף לסל" >
-=======
-    <input type="button" value="הוסף לסל" (click)=" this.clickAdd()">
->>>>>>> 2ab14ecebb5012b09200c4d17caeeab08e0ac060
+    <input type="button" value="הוסף לסל" (click)=" this.service.clickAddToCart()">
     <div class="div">
 
       </div>
@@ -60,9 +56,7 @@ export class ProductDetailsComponent {
         });
 }
 
-clickAdd(){
-    this.service.cart++;
-}
+
 }
 
 /*

@@ -23,6 +23,10 @@ export class LiaService {
         this.galeryPictures=new Array();
         this.products=new Array();
         this.customers=new Array();
+        this.customers[0]={"name":"hhhhh","address":"cccccccccccc","num":4};
+        this.customers[1]={"name":"aaaaaaaaa","address":"t","num":6};
+        this.customers[2]={"name":"ddddddddddddd","address":"5pp","num":2};
+        this.customers[3]={"name":"ttt","address":"t","num":1};
         this.packages = new Array();
         this.post("GetGaleryPictures");
         this.post("GetAdditionalProducts");
@@ -59,7 +63,9 @@ export class LiaService {
         }).catch(() => console.log("error"));
     }
 
-    
+    clickAddToCart(){
+        this.cart++;
+    }
 
     getPackageById(id: number): any {
         console.log(this.packages.length);

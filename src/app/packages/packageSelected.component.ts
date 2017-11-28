@@ -25,7 +25,7 @@ import {Router } from "@angular/router";
                                             <i class="icon-arrow-left-03"></i>
                                     </div>
                     </div>
-                    <input type="button" value="הוסף לסל" >
+                    <input type="button" value="הוסף לסל" (click)="this.service.clickAddToCart()" >
                     <button routerLink="../"> x</button>
             </div>
 
