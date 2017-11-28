@@ -63,29 +63,29 @@ export class LiaService {
 
     }
 
-//     getProductById(id:number)
-//     {
-//         for (let i=0;i<this.products.length;i++)
-//         {
-//           
-//             if(this.products[i].ProductId==id)
-//             {
-//                 this.product=this.products[i];
-//                 i=this.products.length;
-//             }
-//         }
+    getProductById(id:number)
+    {
+        for (let i=0;i<this.products.length;i++)
+        {
+          
+            if(this.products[i].ProductId == id)
+            {
+                this.thisProductDetails=this.products[i];
+                i=this.products.length;
+            }
+        }
 
-//    }
-
-   goTo(pr:number)
-   {
-       for(let i=0; i< this.products.length; i++){
-           if(this.products[i].ProductId === pr)
-           this.thisProductDetails = this.products[i];
-       }
-
-       this.router.navigate(['menu/productDetails']);
    }
+
+//    goTo(pr:number)
+//    {
+//        for(let i=0; i< this.products.length; i++){
+//            if(this.products[i].ProductId === pr)
+//            this.thisProductDetails = this.products[i];
+//        }
+
+//        this.router.navigate(['menu/productDetails']);
+//    }
   
 }
 

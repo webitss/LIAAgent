@@ -20,7 +20,8 @@ import {LiaService} from "./lia.service";
 import {LiaProxy} from "./proxy";
 import {HttpClientModule} from "@angular/common/http";
 import {ProductDetailsComponent} from "./products/productDetails.component";
-import {videoComponentComponent} from "./packages/video.component";
+
+
 
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
@@ -32,7 +33,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 
 @NgModule({
     declarations: [
-        AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
+        AppComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
         PackagesComponent,PackageComponent
     ],
@@ -43,8 +44,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
-                {path: 'productDetails', component: ProductDetailsComponent},
                 {path: 'product', component: ProductsComponent},
+                {path: 'product/:productId', component: ProductDetailsComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
                 {path: 'enter', component: EnterComponent},                    

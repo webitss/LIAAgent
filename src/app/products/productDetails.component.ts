@@ -1,5 +1,8 @@
 import {Component} from "@angular/core";
 import { LiaService } from "../lia.service";
+import { ActivatedRoute } from "@angular/router";
+import {Subscription} from "rxjs/Subscription";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -24,7 +27,7 @@ import { LiaService } from "../lia.service";
      }`
     ],
     template: ` 
-    <input type="button" value="לצפיה">
+    <input *ngIf="this.service.thisProductDetails.VideoUrl" type="button" value="לצפיה">
     <img [src]="this.service.thisProductDetails.PictureUrl"/>
     <h1>{{this.service.thisProductDetails.Duration}}
     {{this.service.thisProductDetails.DurationText}}    
@@ -39,11 +42,16 @@ import { LiaService } from "../lia.service";
       </div>
 `})
 export class ProductDetailsComponent {
-   // myPictures:String[]=[];
     i:number=0;
-    constructor(public service:LiaService)
+    ProductId: number;
+    sub:Subscription;
+
+    constructor(public service:LiaService, private route : ActivatedRoute,router: Router)
     {
-        
+        this.sub = route.params.subscribe(params => {
+            this.ProductId = params['productId'];
+            service.getProductById(this.ProductId);
+        });
     }
 }
 /*
@@ -52,3 +60,4 @@ export class ProductDetailsComponent {
     <img [src]="this.thisProductDetails.pictureUrl" class="img"/>
 */
 //   <img [src]="service.products[i]" class="img" />
+// this.ProductId = params.ProductId;
