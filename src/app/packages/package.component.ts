@@ -33,10 +33,11 @@ import { LiaService } from "../lia.service";
                  
             </div>
             <div class="Line-buffer"></div>
-        </div>
-        <div class="col-xs-3 col-md-3">    
+            <div class="col-xs-3 col-md-3">    
             <ng-content></ng-content>
             </div>  
+        </div>
+       
     </div>
 
  `
