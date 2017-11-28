@@ -11,13 +11,13 @@ import {Router} from "@angular/router";
     <table style="width:100%;">
     <tr>
     <td>
-    <package  [package]="this.service.packages[0]" [routerLink]="this.service.packages[0]?.ProductId"></package>
+    <package  [package]="this.service.packages[0]" [routerLink]="this.service.packages[0]?.ProductId" (click)="this.changeSize()"></package>
     </td>
     <td>
-    <package  [package]="this.service.packages[1]" [routerLink]="this.service.packages[1]?.ProductId"></package>
+    <package  [package]="this.service.packages[1]" [routerLink]="this.service.packages[1]?.ProductId" (click)="this.changeSize()"></package>
     </td>
     <td>
-    <package  [package]="this.service.packages[2]" [routerLink]="this.service.packages[2]?.ProductId"></package>
+    <package  [package]="this.service.packages[2]" [routerLink]="this.service.packages[2]?.ProductId" (click)="this.changeSize()"></package>
     </td>
     </tr>
     </table>
@@ -31,5 +31,9 @@ export class PackagesComponent {
 constructor(public router:Router,public service: LiaService){
 this.service.nowComponent="חבילות";
 }
- 
+changeSize()
+{
+    this.service.isOuter=false;
+    this.service.isInner=true;
+}
 }

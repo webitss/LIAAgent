@@ -14,7 +14,7 @@ import { LiaService } from "../lia.service";
         <div class="name-ticket col-xs-3 col-md-3">
             <div>{{this.package?.ProductName}}</div></div>
 
-        <div [ngClass]="{' col-xs-9 col-md-9 ': this.service.isOuter, ' col-xs-9 col-md-3 ': this.service.isInner}" class="bord">
+        <div [ngClass]="{'col-xs-9 col-md-9 ':this.service.isOuter, 'col-xs-9 col-md-3': this.service.isInner}" class="bord">
             <div class="position-relative">
                 <span class="TicketsNum-inner"> {{this.package?.TicketsNum}}</span>
                     <div class="ticket-sub">כרטיסים</div>
