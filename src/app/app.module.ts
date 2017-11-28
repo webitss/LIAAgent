@@ -19,15 +19,12 @@ import {MenuComponent} from "./menu.component";
 import {LiaService} from "./lia.service";
 import {LiaProxy} from "./proxy";
 import {HttpClientModule} from "@angular/common/http";
-import {ProductDetailsComponent} from "./products/productDetails.component";
-<<<<<<< HEAD
-
-=======
-import {videoComponentComponent} from "./packages/video.component";
 import { PackageSelectedComponent } from './packages/packageSelected.component';
 import { PopupComponent } from './popups/popup.component';
 import { Popup2Component } from './popups/popup2.component';
->>>>>>> 899ecf9d015e5dad5de2d0692af63217daf525f6
+import { ProductDetailsComponent } from './products/productDetails.component';
+import { VideoComponent } from './video.component';
+
 
 
 
@@ -41,8 +38,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 @NgModule({
     declarations: [
         AppComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
-        GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
-        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent,Popup2Component
+        GaleryComponent, ProductsComponent, CustomerComponent, CartComponent, ProductDetailsComponent,
+        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent,Popup2Component, VideoComponent
 
     ],
     imports: [
@@ -53,15 +50,12 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
-<<<<<<< HEAD
-=======
                 {path: 'packages/:productId', component: PackageSelectedComponent},
                 {path: 'packageSelected', component: PackageSelectedComponent},
-                {path: 'productDetails', component: ProductDetailsComponent},
-                //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
->>>>>>> 899ecf9d015e5dad5de2d0692af63217daf525f6
                 {path: 'product', component: ProductsComponent},
                 {path: 'product/:productId', component: ProductDetailsComponent},
+                {path: 'product/:productId/video', component: VideoComponent},
+                {path: 'packages/:productId/video', component: VideoComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
                 {path: 'enter', component: EnterComponent},                    
