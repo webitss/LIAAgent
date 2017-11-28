@@ -5,14 +5,7 @@ import {Router} from '@angular/router';
 @Component({
     selector: 'logo',
     template: ` 
-
-    // <div class="bg-login" id="body">
-    // <div>
-    // <img src="assets/pictures/logo-login.png"/>
-    // </div>
-    //     <button routerLink="/login" (click)="mini()" >---></button>
-
-
+    <div class="bg-login" id="body">
     <div class="logo-login">
     <img src="assets/pictures/logo-login.png"/>
     </div>
@@ -183,3 +176,10 @@ export class LogoComponent {
         //this.router.navigate(['/login']);
     }
 }
+
+
+// <div>
+    // <img src="assets/pictures/logo-login.png"/>
+    // </div>
+    //     <button routerLink="/login" (click)="mini()" >---></button>
+
