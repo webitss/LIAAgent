@@ -42,6 +42,8 @@ export class PackageSelectedComponent implements OnDestroy{
     sub:Subscription;
     id:number;
     constructor(private route:ActivatedRoute,private router:Router,public service: LiaService){
+        this.service.isOuter=false;
+        this.service.isInner=true;
                 this.sub=route.params.subscribe(params=>{
                     this.id=params['productId'];
              });
