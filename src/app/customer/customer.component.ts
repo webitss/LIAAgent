@@ -4,20 +4,20 @@ import { LiaService } from '../lia.service';
 @Component({
   selector: 'app-customer',
   template: `
-    <p>
-      customer works!
-    </p>
-
+   
     <div class="container-lia container">
 <div class="col-md-6 col-xs-6">
-<div ><i class="icon-arrow-up-05 t-center green"></i></div>
 
-<div class="col-md-3 col-xs-3">שם העסק</div>
-<div class="col-md-4 col-xs-4">כתובת</div>
-<div class="col-md-4 col-xs-4">חבילת כרטסים שברשותו</div>
-<div class="col-md-1 col-xs-1"><i class="icon-arrow-left-03"></i></div>
+<div class="t-center"><i class="icon-arrow-up-05 t-center green f-size-icon"></i></div>
 
-<div ><i class="icon-arrow-down-04 t-center green"></i></div>
+<div class="border-bottam-table green">
+<span class="col-md-3 col-xs-3">שם העסק</span>
+<span class="col-md-4 col-xs-4">כתובת</span>
+<span class="col-md-4 col-xs-4">חבילת כרטסים שברשותו</span>
+<span class="col-md-1 col-xs-1"><i class="icon-arrow-left-03 green f-size-icon"></i></span>
+</div>
+
+<div class="t-center"><i class="icon-arrow-down-04 t-center green f-size-icon"></i></div>
 </div>
 
 <div class="col-md-6 col-xs-6"></div>
