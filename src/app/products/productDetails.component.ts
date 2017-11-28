@@ -26,7 +26,7 @@ import { Router } from "@angular/router";
           
      }`
     ],
-<<<<<<< HEAD
+
     template: ` 
     <input *ngIf="this.service.thisProductDetails.VideoUrl" type="button" value="לצפיה">
     <img [src]="this.service.thisProductDetails.PictureUrl"/>
@@ -40,13 +40,7 @@ import { Router } from "@angular/router";
     </h2>
     <input type="button" value="הוסף לסל">
     <div class="div">
-=======
-    template: `
 
-      <div class="div">
-          {{this.service.thisProductDetails.ProductId}}          
-
->>>>>>> 899ecf9d015e5dad5de2d0692af63217daf525f6
       </div>
 `})
 export class ProductDetailsComponent {
@@ -69,7 +63,4 @@ export class ProductDetailsComponent {
     <img [src]="this.thisProductDetails.pictureUrl" class="img"/>
 */
 //   <img [src]="service.products[i]" class="img" />
-<<<<<<< HEAD
-// this.ProductId = params.ProductId;
-=======
->>>>>>> 899ecf9d015e5dad5de2d0692af63217daf525f6
+
