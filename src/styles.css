@@ -100,7 +100,7 @@ width: 100%;
  .logo-login-mini{
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
  }
 

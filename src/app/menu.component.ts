@@ -22,11 +22,10 @@ import { Input } from "@angular/core";
             </div>
             </div>
         </div>
-        <popup  *ngIf="userWantOut" [(visible)]="userWantOut">
-                <p>האם אתה בטוח שברצונך לצאת?</p>
+        <popup2  *ngIf="userWantOut" [(visible)]="userWantOut">
                 <input type="button" value="אישור" routerLink="../">
                 <input type="button" value="ביטול" (click)="userWantOutFunc()" >
-         </popup>
+         </popup2>
         <footer class="menu-footer">
             
            <ul>

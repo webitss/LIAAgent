@@ -23,6 +23,7 @@ import {ProductDetailsComponent} from "./products/productDetails.component";
 import {videoComponentComponent} from "./packages/video.component";
 import { PackageSelectedComponent } from './packages/packageSelected.component';
 import { PopupComponent } from './popups/popup.component';
+import { Popup2Component } from './popups/popup2.component';
 
 
 
@@ -37,7 +38,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     declarations: [
         AppComponent,videoComponentComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
-        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent
+        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent,Popup2Component
 
     ],
     imports: [
