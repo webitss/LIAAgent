@@ -16,6 +16,7 @@ export class LiaService {
     thisProductDetails: any;
     isOuter:boolean;
     isInner:boolean;
+    cart: number = 0;    
 
 
     constructor(private proxy: LiaProxy, public router: Router) {

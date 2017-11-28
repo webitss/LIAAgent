@@ -19,8 +19,6 @@ export class VideoComponent {
 
 
     constructor(public service: LiaService) {
-        console.log("kkkkkkkkkkkkkkk");
         console.log(this.service.thisProductDetails.VideoUrl);
-        console.log("llllllllllll");
     }
 }
