@@ -5,15 +5,14 @@ import {Router} from '@angular/router';
 @Component({
     selector: 'logo',
     template: ` 
+    
     <div class="bg-login" id="body">
-    <div class="logo-login">
-    <img src="assets/pictures/logo-login.png"/>
+    <div  [ngClass]="{'logo-login': isClassBig, 'logo-login-mini': isClassMini}">
+    <img src="assets/pictures/logo-login.png" />
     </div>
-
-
-        <button routerLink="/login" (click)="mini()" class="arrow-login-open"><i class="icon-arrow-right-02 "></i></button>
+        <button routerLink="/login" (click)="mini()" class="arrow-login-open">
+        <i class="icon-arrow-right-02 "></i></button>
         <div class="gradient-color"></div>
-
     </div>
    
         <router-outlet></router-outlet>
@@ -163,8 +162,11 @@ export class LogoComponent {
              this.router.navigate(['/packages']);
          }*/
         //auth.handleAuthentication();
+        this.isClassMini=false;
+        this.isClassBig=true;
     }
-
+    isClassMini:boolean;
+    isClassBig:boolean;
     ngOnInit() {
 
     }
@@ -173,6 +175,8 @@ export class LogoComponent {
         var body = document.getElementById("body");
         body.style.width = "50%";
         body.style.cssFloat = "right";
+        this.isClassMini=true;
+        this.isClassBig=false;
         //this.router.navigate(['/login']);
     }
 }
