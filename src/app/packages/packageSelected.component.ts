@@ -25,6 +25,8 @@ import {Router } from "@angular/router";
                                             <i class="icon-arrow-left-03"></i>
                                     </div>
                     </div>
+                    <input type="button" value="הוסף לסל" >
+                    <button routerLink="../"> x</button>
             </div>
 
             <div *ngIf="this.service.isPackageProductDetailed">
