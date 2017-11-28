@@ -18,10 +18,12 @@ import {Router } from "@angular/router";
        <package [package]="this.nowPackage">
        <div class="container-lia container">
        <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
-         {{p.ParentProductId}}
-         {{p.ProductId}}
-         {{p.ProductName}}
-         <i class="icon-arrow-left-03"></i>
+       <div (click)="this.clicked()">
+       {{p.ParentProductId}}
+       {{p.ProductId}}
+       {{p.ProductName}}
+       <i class="icon-arrow-left-03"></i>
+       </div>
        </div>
        </div>
        </package>
@@ -43,6 +45,12 @@ export class PackageSelectedComponent implements OnDestroy{
              });
                 this.nowPackage=this.service.getPackageById(this.id);
                 console.log(this.nowPackage);
+    }
+
+
+    clicked()
+    {
+console.log("lllllllllllllllllllllll");
     }
  
 }
