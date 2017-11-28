@@ -19,19 +19,12 @@ import {MenuComponent} from "./menu.component";
 import {LiaService} from "./lia.service";
 import {LiaProxy} from "./proxy";
 import {HttpClientModule} from "@angular/common/http";
-<<<<<<< HEAD
-import {ProductDetailsComponent} from "./products/productDetails.component";
-//import {videoComponentComponent} from "./packages/video.component";
-import { PackageSelectedComponent } from './packages/packageSelected.component';
-import { PopupComponent } from './popups/popup.component';
-import { Popup2Component } from './popups/popup2.component';
-=======
 import { PackageSelectedComponent } from './packages/packageSelected.component';
 import { PopupComponent } from './popups/popup.component';
 import { Popup2Component } from './popups/popup2.component';
 import { ProductDetailsComponent } from './products/productDetails.component';
 import { VideoComponent } from './video.component';
->>>>>>> 54c129974e9cb661a807f6c530dcb7290ff75eb3
+
 
 
 
@@ -60,11 +53,6 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'packages', component: PackagesComponent},
                 {path: 'packages/:productId', component: PackageSelectedComponent},
                 {path: 'packageSelected', component: PackageSelectedComponent},
-<<<<<<< HEAD
-                {path: 'productDetails', component: ProductDetailsComponent},
-                //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
-=======
->>>>>>> 54c129974e9cb661a807f6c530dcb7290ff75eb3
                 {path: 'product', component: ProductsComponent},
                 {path: 'product/:productId', component: ProductDetailsComponent},
                 {path: 'product/:productId/video', component: VideoComponent},

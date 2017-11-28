@@ -16,7 +16,7 @@ import {Router } from "@angular/router";
     template: `
     
        <package [package]="this.nowPackage">
-            <div *ngIf="!this.isDetailed" class="container-lia container" >
+            <div *ngIf="!this.service.isPackageProductDetailed" class="container-lia container" >
                     <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
                                     <div (click)="this.details(p)">
                                             {{p.ParentProductId}}
@@ -27,11 +27,11 @@ import {Router } from "@angular/router";
                     </div>
             </div>
 
-            <div *ngIf="this.isDetailed">
+            <div *ngIf="this.service.isPackageProductDetailed">
             <p> {{this.product.ProductId}}</p>
             <p> {{this.product.ProductName}}</p>
             <img [src]="this.product.PictureUrl"/>
-            <input *ngIf="this.product.VideoUrl" type="button" value="לצפיה" />
+            <input *ngIf="this.product.VideoUrl" type="button" value="לצפיה" routerLink="video" (click)="updateThisProduct()" />
            <button (click)="this.details()"> <i class="icon-arrow-right-02"></i></button>
            <button routerLink="../"> x</button>
             </div>
@@ -51,9 +51,9 @@ export class PackageSelectedComponent implements OnDestroy{
     id:number;
     isDetailed:boolean;
     constructor(private route:ActivatedRoute,private router:Router,public service: LiaService){
-        this.isDetailed=false;
         this.service.isOuter=false;
         this.service.isInner=true;
+        this.product=this.service.packageProduct;
                 this.sub=route.params.subscribe(params=>{
                     this.id=params['productId'];
              });
@@ -64,9 +64,13 @@ export class PackageSelectedComponent implements OnDestroy{
 
     details(product?)
     {
-       this.isDetailed=!this.isDetailed;
+       this.service.isPackageProductDetailed=!this.service.isPackageProductDetailed;
        this.product=product;
        console.log(this.product);
+    }
+    updateThisProduct()
+    {
+        this.service.packageProduct=this.product;
     }
  
 }

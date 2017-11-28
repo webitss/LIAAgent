@@ -16,8 +16,8 @@ export class LiaService {
     thisProductDetails: any;
     isOuter:boolean;
     isInner:boolean;
-
-
+    isPackageProductDetailed:boolean;
+    packageProduct:any;
     constructor(private proxy: LiaProxy, public router: Router) {
         this.galeryPictures=new Array();
         this.products=new Array();
@@ -26,6 +26,7 @@ export class LiaService {
         this.post("GetGaleryPictures");
         this.post("GetAdditionalProducts");
         this.post("GetPackages");
+        this.isPackageProductDetailed=false;
         this.isOuter=true;
         this.isInner=false;
         console.log(this.galeryPictures);
