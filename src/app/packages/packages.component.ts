@@ -1,5 +1,7 @@
 import {Component, Input, OnDestroy} from "@angular/core";
 import {LiaService} from "../lia.service";
+import {Router} from "@angular/router";
+
 
 @Component({
     selector: 'packagesComponent',
@@ -9,13 +11,13 @@ import {LiaService} from "../lia.service";
     <table style="width:100%;">
     <tr>
     <td>
-    <package  [package]="this.service.packages[0]" ></package>
+    <package  [package]="this.service.packages[0]" [routerLink]="this.service.packages[0]?.ProductId"></package>
     </td>
     <td>
-    <package  [package]="this.service.packages[1]"></package>
+    <package  [package]="this.service.packages[1]" [routerLink]="this.service.packages[1]?.ProductId"></package>
     </td>
     <td>
-    <package  [package]="this.service.packages[2]"></package>
+    <package  [package]="this.service.packages[2]" [routerLink]="this.service.packages[2]?.ProductId"></package>
     </td>
     </tr>
     </table>
@@ -26,7 +28,7 @@ import {LiaService} from "../lia.service";
 export class PackagesComponent {
 
 
-constructor(public service: LiaService){
+constructor(public router:Router,public service: LiaService){
 this.service.nowComponent="חבילות";
 }
  

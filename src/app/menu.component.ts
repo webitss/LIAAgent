@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
 import { LiaService } from "./lia.service";
+import { Input } from "@angular/core";
 
 @Component({
     //selector: 'menu',
@@ -15,17 +16,20 @@ import { LiaService } from "./lia.service";
             <div class="header-name"><span class="">{{this.service.nowComponent}}</span></div>
             </div>
             <div class="col-md-4 col-xs-4">
-            <div class="user-name">
+            <div class="user-name" (click)="userWantOutFunc()">
             <span>ינון שיבולי</span>
             <i class="icon-user-11" ></i>
             </div>
             </div>
         </div>
-
+        <popup2  *ngIf="userWantOut" [(visible)]="userWantOut">
+                <input type="button" value="אישור" routerLink="../">
+                <input type="button" value="ביטול" (click)="userWantOutFunc()" >
+         </popup2>
         <footer class="menu-footer">
             
            <ul>
-            <li routerLink="galery" class="hoverbtn effect-8 btn-footer">
+            <li routerLink="galery" class="hoverbtn effect-8 btn-footer" >
             <i class="icon-image-10"></i>
             </li>
 
@@ -118,12 +122,16 @@ import { LiaService } from "./lia.service";
 export class MenuComponent {
     
 
-    constructor(public service: LiaService, public router: Router) {
 
+    constructor(public service: LiaService, public router: Router) {
+        this.userWantOut=false;
     }
 
-    
-
+    @Input() userWantOut:boolean;
+    userWantOutFunc()
+    {
+        this.userWantOut=!this.userWantOut;
+    }
     //go to the enter class
     goTo() {
         this.router.navigate(['menu/enter']);

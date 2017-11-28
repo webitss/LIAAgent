@@ -10,11 +10,8 @@ import { LiaService } from "../lia.service";
     ],
     template: `        
     <div class="col-md-12">
-    
-    <div class="name-ticket col-xs-3 col-md-3">
+    <div class="name-ticket col-xs-3 col-md-3"> <div>{{this.package?.ProductName}}</div>
 
-    <div>{{this.package?.ProductName}}</div>
-       
 </div>
         <div class="bord col-xs-9 col-md-9">
             <div class="position-relative">
@@ -29,8 +26,11 @@ import { LiaService } from "../lia.service";
    <span>שקל</span><br/>
    <span>לכרטיס</span><br/>
    <span>בודד </span>
+   
    </div>
+   <ng-content></ng-content>
    <div class="Line-buffer"></div>
+   
    </div>
  
 </div>
@@ -42,23 +42,11 @@ export class PackageComponent  {
     
    
     constructor( public service: LiaService) {
-        // console.log(this.service.packages[0]);
-        // this.service.package=this.packageInput;
-        // console.log(this.packageInput);
-        // console.log(this.service.package);
-
-
-    }
-    //@Input() packageInput: any;
-
-        
-       
-
     }
 
+    
 
-
-
+}
 
 
 

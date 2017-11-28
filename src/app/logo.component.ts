@@ -5,22 +5,14 @@ import {Router} from '@angular/router';
 @Component({
     selector: 'logo',
     template: ` 
-
-    // <div class="bg-login" id="body">
-    // <div>
-    // <img src="assets/pictures/logo-login.png"/>
-    // </div>
-    //     <button routerLink="/login" (click)="mini()" >---></button>
-
-
-    <div class="logo-login">
-    <img src="assets/pictures/logo-login.png"/>
+    
+    <div class="bg-login" id="body">
+    <div  [ngClass]="{'logo-login': isClassBig, 'logo-login-mini': isClassMini}">
+    <img src="assets/pictures/logo-login.png" />
     </div>
-
-
-        <button routerLink="/login" (click)="mini()" class="arrow-login-open"><i class="icon-arrow-right-02 "></i></button>
-<div class="gradient-color"></div>
-
+        <button routerLink="/login" (click)="mini()" [ngClass]="{'arrow-login-open': isClassBig, 'arrow-login-open-mini': isClassMini}">
+        <i [ngClass]="{'icon-arrow-right-02': isClassBig, 'icon-arrow-left-03': isClassMini}"></i></button>
+        <div class="gradient-color"></div>
     </div>
    
         <router-outlet></router-outlet>
@@ -170,16 +162,38 @@ export class LogoComponent {
              this.router.navigate(['/packages']);
          }*/
         //auth.handleAuthentication();
+        this.isClassMini=false;
+        this.isClassBig=true;
     }
-
+    isClassMini:boolean;
+    isClassBig:boolean;
     ngOnInit() {
 
     }
 
     mini() {
+        this.isClassMini=!this.isClassMini;
+        this.isClassBig=!this.isClassBig;
+        if(this.isClassMini==true)
+        {
         var body = document.getElementById("body");
         body.style.width = "50%";
         body.style.cssFloat = "right";
+        }
+        else
+        {
+            var body = document.getElementById("body");
+            body.style.width = "100%";
+            //body.style.cssFloat = "right";
+        }
+        
         //this.router.navigate(['/login']);
     }
 }
+
+
+// <div>
+    // <img src="assets/pictures/logo-login.png"/>
+    // </div>
+    //     <button routerLink="/login" (click)="mini()" >---></button>
+

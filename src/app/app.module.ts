@@ -20,7 +20,14 @@ import {LiaService} from "./lia.service";
 import {LiaProxy} from "./proxy";
 import {HttpClientModule} from "@angular/common/http";
 import {ProductDetailsComponent} from "./products/productDetails.component";
+<<<<<<< HEAD
 
+=======
+import {videoComponentComponent} from "./packages/video.component";
+import { PackageSelectedComponent } from './packages/packageSelected.component';
+import { PopupComponent } from './popups/popup.component';
+import { Popup2Component } from './popups/popup2.component';
+>>>>>>> 899ecf9d015e5dad5de2d0692af63217daf525f6
 
 
 
@@ -35,15 +42,24 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     declarations: [
         AppComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent,ProductDetailsComponent, CustomerComponent, CartComponent,
-        PackagesComponent,PackageComponent
+        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent,Popup2Component
+
     ],
     imports: [
-            BrowserModule,HttpModule,HttpClientModule, 
+            BrowserModule,HttpModule,
+            HttpClientModule, 
             RouterModule.forRoot([
                 {path: '', component: LogoComponent, children:[{path: 'login', component: LoginComponent}]},
                 {path: 'menu', component: MenuComponent, children:[
                 {path: 'galery', component: GaleryComponent},
                 {path: 'packages', component: PackagesComponent},
+<<<<<<< HEAD
+=======
+                {path: 'packages/:productId', component: PackageSelectedComponent},
+                {path: 'packageSelected', component: PackageSelectedComponent},
+                {path: 'productDetails', component: ProductDetailsComponent},
+                //{path: 'packages3/:ProductId/video', component: videoComponentComponent},
+>>>>>>> 899ecf9d015e5dad5de2d0692af63217daf525f6
                 {path: 'product', component: ProductsComponent},
                 {path: 'product/:productId', component: ProductDetailsComponent},
                 {path: 'customer', component: CustomerComponent},
@@ -59,6 +75,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
             useFactory: authHttpServiceFactory,
             deps: [Http, RequestOptions]
         },AuthService],
+    exports:[RouterModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {
