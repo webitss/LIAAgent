@@ -8,15 +8,14 @@ import {Router } from "@angular/router";
     selector: 'packageSelectedComponent',
     styles: [
         `
-        #divLeft{
-            left="50px";
-        }
+     
         `
     ],
     template: `
-    
+    <div class="container-lia container">
+
        <package [package]="this.nowPackage">
-       <div class="container-lia container">
+       <div class="">
        <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
        <div (click)="this.clicked()">
        {{p.ParentProductId}}
@@ -27,7 +26,7 @@ import {Router } from "@angular/router";
        </div>
        </div>
        </package>
-       
+     </div>  
   
     `
 })
