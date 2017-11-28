@@ -15,7 +15,7 @@ import {Router } from "@angular/router";
     ],
     template: `
     
-       <package [package]="this.nowPackage"></package>
+       <package [package]="this.nowPackage">
        <div class="container-lia container">
        <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
          {{p.ParentProductId}}
@@ -23,7 +23,10 @@ import {Router } from "@angular/router";
          {{p.ProductName}}
          <i class="icon-arrow-left-03"></i>
        </div>
-   </div>
+       </div>
+       </package>
+       
+  
     `
 })
 export class PackageSelectedComponent implements OnDestroy{

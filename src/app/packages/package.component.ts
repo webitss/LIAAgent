@@ -26,8 +26,11 @@ import { LiaService } from "../lia.service";
    <span>שקל</span><br/>
    <span>לכרטיס</span><br/>
    <span>בודד </span>
+   
    </div>
+   <ng-content></ng-content>
    <div class="Line-buffer"></div>
+   
    </div>
  
 </div>
