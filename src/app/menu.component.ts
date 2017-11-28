@@ -46,7 +46,7 @@ import { Input } from "@angular/core";
             </li>
 
             <li routerLink="cart" class="hoverbtn effect-8 btn-footer" >
-            <div class="alert-number">2</div>
+            <div class="alert-number">{{service.cart}}</div>
              <i class="icon-Cart-06"></i>
              </li>
 
