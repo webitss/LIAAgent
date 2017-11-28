@@ -15,7 +15,8 @@ export class LiaService {
     nowComponent:String;
     product:any;
     thisProductDetails: any;
-    
+    isOuter:boolean;
+    isInner:boolean;
     constructor(private proxy: LiaProxy, public router: Router) {
         this.galeryPictures=new Array();
         this.products=new Array();
