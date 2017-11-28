@@ -18,6 +18,7 @@ export class LiaService {
     isInner:boolean;
     isPackageProductDetailed:boolean;
     packageProduct:any;
+    cart: number = 0;    
     constructor(private proxy: LiaProxy, public router: Router) {
         this.galeryPictures=new Array();
         this.products=new Array();
