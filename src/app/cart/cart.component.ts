@@ -30,7 +30,7 @@ import { Router } from '@angular/router';
   <button class="btn btn-width bg-pink">הוסף מוצר </button>
   </a>
   <button class="btn btn-width bg-green">המשך תשלום לקוח קיים </button>
-  <button class="btn btn-width bg-blue">המשך לתשלום</button>
+  <button class="btn btn-width bg-blue" routerLink="../personalForm">המשך לתשלום</button>
 
   </div>
   </div>
