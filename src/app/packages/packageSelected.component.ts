@@ -19,8 +19,6 @@ import {Router } from "@angular/router";
             <div *ngIf="!this.service.isPackageProductDetailed" class="container-lia container" >
                     <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
                                     <div (click)="this.details(p)">
-                                            {{p.ParentProductId}}
-                                            {{p.ProductId}}
                                             {{p.ProductName}}
                                             <i class="icon-arrow-left-03"></i>
                                     </div>
