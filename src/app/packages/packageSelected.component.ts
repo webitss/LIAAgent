@@ -20,10 +20,8 @@ import {Router } from "@angular/router";
             <div class="ParentProduct-inner">
                     <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
                                     <div (click)="this.details(p)">
-                                            <span>{{p.ParentProductId}}</span>
-                                            <span>{{p.ProductId}}</span>
-                                            <span>{{p.ProductName}}</span>
-                                            <i class="icon-arrow-left-03"></i>
+                                           <span> {{p.ProductName}}</span>
+                                           <i class="icon-arrow-left-03"></i>
                                     </div>
                     </div>
             </div>        

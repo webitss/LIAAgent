@@ -41,7 +41,6 @@ import { Router } from "@angular/router";
 
     <input type="button" value="הוסף לסל" (click)=" this.service.clickAddToCart( this.service.thisProductDetails)">
 
-
     <div class="div">
 
       </div>
