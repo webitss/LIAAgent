@@ -29,7 +29,7 @@ import { businessFormComponent } from './forms/businessForm.component';
 import { PayComponent } from './payment/pay.component';
 import {FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
-import * as SignaturePad from 'signature_pad';
+//import * as SignaturePad from 'signature_pad';
 import { FormOfUseComponent } from './payment/formOfUse.component';
 
 
@@ -80,7 +80,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
             useFactory: authHttpServiceFactory,
             deps: [Http, RequestOptions]
         },AuthService],
-    exports:[RouterModule],
+    exports:[RouterModule, FormsModule, ReactiveFormsModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {

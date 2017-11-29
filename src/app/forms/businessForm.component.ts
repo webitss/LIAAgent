@@ -8,33 +8,47 @@ import { Router,ActivatedRoute } from '@angular/router';
   selector: 'businessForm',
   template: `
       <p> פרטי עסק</p>
-          <div *ngIf="!this.anotherDetails">
-          <input placeholder="שם העסק"/>
-          <input placeholder='ח"פ'/>
-          <input placeholder='טלפון בית העסק'/>
-          <input placeholder='כתובת בית העסק'/>
-          <input placeholder="כתובת אתר העסק"/>
-          <input placeholder="קטגורית עסק"/>
-          </div>
-            <div *ngIf="this.anotherDetails">
-            <a >לוגו</a>
-            <img />
-            <input placeholder="שעות פתיחה"/>
-            </div>
-            <button [routerLink]="this.routeOrStay" (click)="continue()">המשך</button>
+
+      <div *ngIf="!this.service.anotherDetails" >
+      <form [formGroup]="service.frmBusiness" (ngSubmit)="service.submitFrmBusiness(this.service.frmBusiness.value)">
+      <input placeholder="שם העסק" formControlName="name"/>
+      <input placeholder='ח"פ' formControlName="PrivatelyHeldCompany"/>
+      <input placeholder='טלפון בית העסק' formControlName="phone"/>
+      <input placeholder='כתובת בית העסק' formControlName="address"/>
+      <input placeholder="כתובת אתר העסק" formControlName="websiteAddress"/>
+      <input placeholder="קטגורית עסק" formControlName="category"/>
+      <input type="submit" value="המשך" [disabled]="!service.frmBusiness.valid" >
+      </form>      
+      </div>
+      
+        <div *ngIf="this.service.anotherDetails">
+        <form [formGroup]="service.frmMoredetails" (ngSubmit)="service.submitFrmBusiness()">
+        <input placeholder="logo" formControlName="logo"/>
+        <a >לוגו</a>
+        <img />
+        <input placeholder="שעות פתיחה" formControlName="OpeningHours"/>
+        <a [routerLink]="this.service.routeOrStay">
+        <input type="submit" value="המשך" [disabled]="!service.frmMoredetails.valid" >
+        </a>
+        </form> 
+        </div>
+      
      `,
   styles: []
 })
 export class businessFormComponent  {
-  anotherDetails:boolean;
-  routeOrStay:string;
+  
+
   constructor(public service:LiaService,public router:Router)
   {
-    this.routeOrStay="businessForm"
-    this.anotherDetails=false;
+     this.service.routeOrStay="businessForm";
+     this.service.anotherDetails=false;
   }
-  continue(){
-    this.anotherDetails=true;
-    this.routeOrStay="../pay";
-  }
+  // continue(frm){
+  //   this.anotherDetails=true;
+  //   this.routeOrStay="../pay";
+  // }
 }
+/*
+            <button [routerLink]="this.routeOrStay" (click)="continue()">המשך</button>
+*/

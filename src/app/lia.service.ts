@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {LiaProxy} from "./proxy";
 import {Router} from "@angular/router";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+
 
 @Injectable()
 export class LiaService {
@@ -23,6 +25,30 @@ export class LiaService {
     packagesOfCart: any[];
     isPayed:boolean;
     isTerminateOrdered:boolean;
+    frmPersonal = new FormGroup({
+        first_name: new FormControl("",Validators.required),
+        id: new FormControl("",Validators.required),
+        phoneNumber: new FormControl("",Validators.required),
+        address: new FormControl("",Validators.required),
+        email: new FormControl("",Validators.required),
+        callPhone: new FormControl()
+    })
+
+    frmBusiness = new FormGroup({
+        name: new FormControl("",Validators.required),
+        PrivatelyHeldCompany: new FormControl("",Validators.required),
+        phone: new FormControl("",Validators.required),
+        address: new FormControl("",Validators.required),
+        websiteAddress: new FormControl("",Validators.required),
+        category: new FormControl("",Validators.required)
+    })
+    frmMoredetails = new FormGroup({
+        logo: new FormControl(),
+        OpeningHours: new FormControl(),
+    })    
+
+    anotherDetails: boolean;
+    routeOrStay:string;
 
 
     constructor(private proxy: LiaProxy, public router: Router) {
@@ -117,6 +143,14 @@ clickDeleteFromCart(pr){
     console.log(this.productsOfCart);
 }
 
+submitFrmPersonal(frm){
+  // this.router.navigate(['../businessForm']);
+}
+
+submitFrmBusiness(){
+    this.anotherDetails=true;
+    this.routeOrStay="../pay";
+}
 
 //    goTo(pr:number)
 //    {
