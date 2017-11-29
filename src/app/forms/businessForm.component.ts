@@ -9,7 +9,7 @@ import { sourceUrl } from '@angular/compiler';
   selector: 'businessForm',
   template: `
       <p> פרטי עסק</p>
-<<<<<<< HEAD
+
 
       <div *ngIf="!this.service.anotherDetails" >
       <form [formGroup]="service.frmBusiness" (ngSubmit)="service.submitFrmBusiness(this.service.frmBusiness.value)">
@@ -19,18 +19,16 @@ import { sourceUrl } from '@angular/compiler';
       <input placeholder='כתובת בית העסק' formControlName="address"/>
       <input placeholder="כתובת אתר העסק" formControlName="websiteAddress"/>
       <input placeholder="קטגורית עסק" formControlName="category"/>
-      <input type="submit" value="המשך" [disabled]="!service.frmBusiness.valid" >
+      <input type="submit" value="המשך" [disabled]="!service.frmBusiness.valid"/>
       </form>      
       </div>
       
         <div *ngIf="this.service.anotherDetails">
         <form [formGroup]="service.frmMoredetails" (ngSubmit)="service.submitFrmBusiness()">
         <input placeholder="logo" formControlName="logo"/>
-        <a >לוגו</a>
-        <img />
-        <input placeholder="שעות פתיחה" formControlName="OpeningHours"/>
+       <input placeholder="שעות פתיחה" formControlName="OpeningHours"/>
         <a [routerLink]="this.service.routeOrStay">
-        <input type="submit" value="המשך" [disabled]="!service.frmMoredetails.valid" >
+        <input type="submit" value="המשך" [disabled]="!service.frmMoredetails.valid" />
         </a>
         </form> 
         </div>
@@ -38,7 +36,7 @@ import { sourceUrl } from '@angular/compiler';
 
         
             <a (click)="this.f()">לוגו</a>
-            <br><br>
+            <br /><br />
             <label class="uploader" ondragover="return false;"
                 [class.loaded]="loaded" 
                 [style.outlineColor]="dragging ? activeColor : baseColor"
@@ -60,7 +58,7 @@ import { sourceUrl } from '@angular/compiler';
             <input type="file" accept=".jpg, .jpeg, .png"  id="file"  name="file" style="display:none" (change)="this.handleInputChange($event)" (load)="this.handleImageLoad()">
             <img />
            
-            </div>
+         
           
 
 
