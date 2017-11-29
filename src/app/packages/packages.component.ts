@@ -7,7 +7,8 @@ import {Router} from "@angular/router";
     selector: 'packagesComponent',
     styles: [],
     template: `
-    <div class="container-lia container">
+    <div class="container-lia container"> 
+    <div class="">
     <table style="width:100%;">
     <tr>
     <td>
@@ -22,6 +23,7 @@ import {Router} from "@angular/router";
     </tr>
     </table>
 
+    </div>
     </div>
     `
 })

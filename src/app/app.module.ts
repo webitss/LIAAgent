@@ -29,7 +29,7 @@ import { businessFormComponent } from './forms/businessForm.component';
 import { PayComponent } from './payment/pay.component';
 import {FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
-import * as SignaturePad from 'signature_pad';
+//import * as SignaturePad from 'signature_pad';
 import { FormOfUseComponent } from './payment/formOfUse.component';
 
 

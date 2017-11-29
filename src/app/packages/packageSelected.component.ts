@@ -14,31 +14,31 @@ import {Router } from "@angular/router";
         `
     ],
     template: `
-    
+    <div class="container-lia container"> 
        <package [package]="this.nowPackage">
-            <div *ngIf="!this.service.isPackageProductDetailed" class="container-lia container" >
+            <div *ngIf="!this.service.isPackageProductDetailed" class="bg-yellow ParentProduct" >
+            <div class="ParentProduct-inner">
                     <div *ngFor="let p of this.nowPackage?.Products" class="ParentProductId">
                                     <div (click)="this.details(p)">
-                                            {{p.ParentProductId}}
-                                            {{p.ProductId}}
-                                            {{p.ProductName}}
+                                            <span>{{p.ParentProductId}}</span>
+                                            <span>{{p.ProductId}}</span>
+                                            <span>{{p.ProductName}}</span>
                                             <i class="icon-arrow-left-03"></i>
                                     </div>
                     </div>
-                    <input type="button" value="הוסף לסל" (click)="this.service.clickAddToCart()" >
-                    <button routerLink="../"> x</button>
+            </div>        
             </div>
 
             <div *ngIf="this.service.isPackageProductDetailed">
             <p> {{this.product.ProductId}}</p>
             <p> {{this.product.ProductName}}</p>
             <img [src]="this.product.PictureUrl"/>
-            <input *ngIf="this.product.VideoUrl" type="button" value="לצפיה" routerLink="video" (click)="updateThisProduct()" />
+            <input *ngIf="this.product.VideoUrl" type="button" value="לצפיה" routerLink="video" (click)="updateThisProduct()" class="btn-white" />
            <button (click)="this.details()"> <i class="icon-arrow-right-02"></i></button>
-           <button routerLink="../"> x</button>
+           <button routerLink="../"><i class="icon-icon-x_Artboard-2-01 "></i></button>
             </div>
        </package>
-       
+      </div> 
   
     `
 })
