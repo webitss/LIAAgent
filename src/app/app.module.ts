@@ -24,8 +24,13 @@ import { PopupComponent } from './popups/popup.component';
 import { Popup2Component } from './popups/popup2.component';
 import { ProductDetailsComponent } from './products/productDetails.component';
 import { VideoComponent } from './video.component';
-
-
+import { personalFormComponent } from './forms/personalForm.component';
+import { businessFormComponent } from './forms/businessForm.component';
+import { PayComponent } from './payment/pay.component';
+import {FormsModule } from '@angular/forms';
+import {ReactiveFormsModule } from '@angular/forms';
+import * as SignaturePad from 'signature_pad';
+import { FormOfUseComponent } from './payment/formOfUse.component';
 
 
 
@@ -40,11 +45,12 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     declarations: [
         AppComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent, CustomerComponent, CartComponent, ProductDetailsComponent,
-        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent,Popup2Component, VideoComponent
+        PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent,
+        Popup2Component, VideoComponent,personalFormComponent,businessFormComponent,PayComponent,FormOfUseComponent
 
     ],
     imports: [
-            BrowserModule,HttpModule,
+            BrowserModule,HttpModule,FormsModule,ReactiveFormsModule,
             HttpClientModule, 
             RouterModule.forRoot([
                 {path: '', component: LogoComponent, children:[{path: 'login', component: LoginComponent}]},
@@ -57,6 +63,10 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'product', component: ProductsComponent},
                 {path: 'product/:productId/video', component: VideoComponent},
                 {path: 'packages/:productId/video', component: VideoComponent},
+                {path: 'pay',component:PayComponent},
+                {path:'personalForm',component:personalFormComponent},
+                {path:'businessForm',component:businessFormComponent},
+                {path:'pay/formOfUse',component:FormOfUseComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
                 {path: 'enter', component: EnterComponent},                    
