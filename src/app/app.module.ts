@@ -30,6 +30,7 @@ import { PayComponent } from './payment/pay.component';
 import {FormsModule } from '@angular/forms';
 import {ReactiveFormsModule } from '@angular/forms';
 import * as SignaturePad from 'signature_pad';
+import { FormOfUseComponent } from './payment/formOfUse.component';
 
 
 
@@ -45,7 +46,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
         AppComponent,EnterComponent, HomeComponent,LogoComponent, LoginComponent,MenuComponent, 
         GaleryComponent, ProductsComponent, CustomerComponent, CartComponent, ProductDetailsComponent,
         PackagesComponent,PackageComponent,PackageSelectedComponent,PopupComponent,
-        Popup2Component, VideoComponent,personalFormComponent,businessFormComponent,PayComponent
+        Popup2Component, VideoComponent,personalFormComponent,businessFormComponent,PayComponent,FormOfUseComponent
 
     ],
     imports: [
@@ -65,6 +66,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
                 {path: 'pay',component:PayComponent},
                 {path:'personalForm',component:personalFormComponent},
                 {path:'businessForm',component:businessFormComponent},
+                {path:'pay/formOfUse',component:FormOfUseComponent},
                 {path: 'customer', component: CustomerComponent},
                 {path: 'cart', component: CartComponent},
                 {path: 'enter', component: EnterComponent},                    

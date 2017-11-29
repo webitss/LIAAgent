@@ -21,8 +21,8 @@ export class LiaService {
     cart: number = 0;    
     productsOfCart: any[];
     packagesOfCart: any[];
-    
-
+    isPayed:boolean;
+    isTerminateOrdered:boolean;
 
 
     constructor(private proxy: LiaProxy, public router: Router) {
@@ -42,6 +42,8 @@ export class LiaService {
         this.isOuter=true;
         this.isInner=false;
         this.productsOfCart = this.products;
+        this.isPayed=false;
+        this.isTerminateOrdered=false;
         console.log(this.galeryPictures);
         console.log(this.packages);
         console.log(this.products);
