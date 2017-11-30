@@ -5,20 +5,26 @@ import { LiaService } from '../lia.service';
 @Component({
   selector: 'personalForm',
   template: `
-<p> פרטים אישיים</p>
+<div class="container-lia container">
+<div class="col-md-12 col-xs-12">
+      <h3 class="blue"> פרטים אישיים</h3></div>
 
-<form [formGroup]="service.frmPersonal" (ngSubmit)="service.submitFrmPersonal(service.frmPersonal.value)">
-<input placeholder="שם לקוח" formControlName="first_name"/>
-<input placeholder='ת"ז' formControlName="id"/>
-<input placeholder='טלפון' formControlName="phoneNumber"/>
-<input placeholder='כתובת' formControlName="address"/>
-<input placeholder="מייל" formControlName="email"/>
-<input placeholder="נייד" formControlName="callPhone"/>
-<a routerLink="../businessForm">
-<input type="submit" value="המשך" [disabled]="!service.frmPersonal.valid" >
-</a>
-</form>
+      <form [formGroup]="service.frmPersonal" (ngSubmit)="service.submitFrmPersonal(service.frmPersonal.value)">
+      
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="שם לקוח" formControlName="first_name"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='ת"ז' formControlName="id"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='טלפון' formControlName="phoneNumber"/></div>
 
+          <div  class="col-md-3 col-xs-3 pull-right ">
+          <button class="btn btn-width bg-blue height-78" routerLink="../businessForm" type="submit"  [disabled]="!service.frmPersonal.valid" >המשך</button>
+          </div>
+
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='כתובת' formControlName="address"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue"placeholder="מייל" formControlName="email"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="נייד" formControlName="callPhone"/></div>
+          
+      </form>
+</div>
      `,
   styles: []
 })

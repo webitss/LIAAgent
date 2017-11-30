@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   template: `
 
   <div>
-  <div class="col-md-6">
+  <div class="col-md-7 col-xs-7">
   <div class="container-lia container">
   <div class="t-center"><i class="icon-arrow-up-05 t-center blue f-size-icon"></i></div>
   
@@ -22,7 +22,7 @@ import { Router } from '@angular/router';
   </div>
   </div>
 
-  <div class="col-md-6 bg-gray">
+  <div class="col-md-5 col-xs-5 bg-gray">
   <div class="container-lia container">
   <div class="col-md-8 col col-md-offset-2">
   <a routerLink="../packages">
@@ -31,8 +31,7 @@ import { Router } from '@angular/router';
   <a routerLink="../product">
   <button class="btn btn-width bg-pink">הוסף מוצר </button>
   </a>
-  <button class="btn btn-width bg-green">המשך תשלום לקוח קיים </button>
-  <button class="btn btn-width bg-blue" routerLink="../personalForm">המשך לתשלום</button>
+  <button class="btn btn-width bg-green" routerLink="../personalForm">המשך לתשלום</button>
 
   </div>
   </div>

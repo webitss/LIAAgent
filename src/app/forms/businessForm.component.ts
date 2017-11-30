@@ -8,18 +8,28 @@ import { sourceUrl } from '@angular/compiler';
 @Component({
   selector: 'businessForm',
   template: `
-      <p> פרטי עסק</p>
+
+  <div class="container-lia container">
+  <div class="col-md-12 col-xs-12">
+      <h3 class="blue"> פרטי עסק</h3></div>
 
 
       <div *ngIf="!this.service.anotherDetails" >
       <form [formGroup]="service.frmBusiness" (ngSubmit)="service.submitFrmBusiness(this.service.frmBusiness.value)">
-      <input placeholder="שם העסק" formControlName="name"/>
-      <input placeholder='ח"פ' formControlName="PrivatelyHeldCompany"/>
-      <input placeholder='טלפון בית העסק' formControlName="phone"/>
-      <input placeholder='כתובת בית העסק' formControlName="address"/>
-      <input placeholder="כתובת אתר העסק" formControlName="websiteAddress"/>
-      <input placeholder="קטגורית עסק" formControlName="category"/>
-      <input type="submit" value="המשך" [disabled]="!service.frmBusiness.valid"/>
+
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="שם העסק" formControlName="name"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='ח"פ' formControlName="PrivatelyHeldCompany"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='טלפון בית העסק' formControlName="phone"/></div>
+
+      <div  class="col-md-3 col-xs-3 pull-right">
+       <button class="btn btn-width bg-blue height-78" [disabled]="!service.frmBusiness.valid">המשך</button></div>
+
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='כתובת בית העסק' formControlName="address"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="כתובת אתר העסק" formControlName="websiteAddress"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="קטגורית עסק" formControlName="category"/></div>
+
+
+      
       </form>      
       </div>
       
@@ -58,7 +68,7 @@ import { sourceUrl } from '@angular/compiler';
             <input type="file" accept=".jpg, .jpeg, .png"  id="file"  name="file" style="display:none" (change)="this.handleInputChange($event)" (load)="this.handleImageLoad()">
             <img />
            
-         
+            </div>     
           
 
 

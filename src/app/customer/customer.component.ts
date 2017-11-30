@@ -5,8 +5,9 @@ import { LiaService } from '../lia.service';
   selector: 'app-customer',
   template: `
    
-    <div class="container-lia container">
-          <div class="col-md-6 col-xs-6">
+    
+          <div class="col-md-7 col-xs-7">
+          <div class="container-lia container">
                     <div class="t-center"><i class="icon-arrow-up-05 t-center green f-size-icon"></i></div>
                     <div class="border-bottam-table green" *ngFor="let p of this.service.customers">
                                 <div (click)="customerClicked()">
@@ -19,12 +20,13 @@ import { LiaService } from '../lia.service';
                       <div *ngIf="this.allowDetails"> <p>uuuuuuuuu</p> </div>
                       <div class="t-center"><i class="icon-arrow-down-04 t-center green f-size-icon"></i></div>
          </div>
+         </div>
 
-        <div class="col-md-6 col-xs-6">
+        <div class="col-md-5 col-xs-5 bg-gray">
                 <div class="container-lia container">
                       <div class="col-md-8 col-md-offset-2">
                                   <div>
-                                  <input placeholder="חיפוש לקוח קיים"/>
+                                  <input class="input-difult green" placeholder="חיפוש לקוח קיים"/>
                                   </div>
                             <button class="btn btn-width bg-green" routerLink="../cart">{{this.valueButton}}</button>
                       </div>
@@ -33,7 +35,7 @@ import { LiaService } from '../lia.service';
 
 
 
-    </div>
+    
 
 
 
