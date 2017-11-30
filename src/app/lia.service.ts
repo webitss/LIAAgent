@@ -29,7 +29,7 @@ export class LiaService {
         first_name: new FormControl("",Validators.required),
         id: new FormControl("",Validators.required),
         phoneNumber: new FormControl("",Validators.required),
-        address: new FormControl("",Validators.required),
+        address: new FormControl(),
         email: new FormControl("",Validators.required),
         callPhone: new FormControl()
     })
@@ -148,8 +148,11 @@ submitFrmPersonal(frm){
 }
 
 submitFrmBusiness(){
-    this.anotherDetails=true;
-    this.routeOrStay="../pay";
+    if(this.frmBusiness.valid)
+    {
+         this.anotherDetails=true;
+         this.routeOrStay="../pay";
+    }
 }
 
 //    goTo(pr:number)

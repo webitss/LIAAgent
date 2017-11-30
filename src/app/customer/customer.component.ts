@@ -5,6 +5,7 @@ import { LiaService } from '../lia.service';
   selector: 'app-customer',
   templateUrl: 'customer.component.html',
   styles: ['customer.component.scss']
+
 })
 export class CustomerComponent implements OnInit {
   valueButton:string;
