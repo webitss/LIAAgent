@@ -34,13 +34,16 @@ import { sourceUrl } from '@angular/compiler';
       </div>
       
         <div *ngIf="this.service.anotherDetails">
-        <form [formGroup]="service.frmMoredetails" (ngSubmit)="service.submitFrmBusiness()">
-        <input placeholder="logo" formControlName="logo"/>
-       <input placeholder="שעות פתיחה" formControlName="OpeningHours"/>
-        <a [routerLink]="this.service.routeOrStay">
-        <input type="submit" value="המשך" [disabled]="!service.frmMoredetails.valid" />
-        </a>
-        </form> 
+
+            <form [formGroup]="service.frmMoredetails" (ngSubmit)="service.submitFrmBusiness()">
+
+            <div class="col-md-3 col-xs-3"><input class="input-difult blue height-78" placeholder="logo" formControlName="logo"/></div>
+            <div class="col-md-6 col-xs-6"><input class="input-difult blue height-78" placeholder="שעות פתיחה" formControlName="OpeningHours"/></div>
+            <div class="col-md-3 col-xs-3">
+                <button class="btn btn-width bg-blue height-78" routerLink="this.service.routeOrStay" [disabled]="!service.frmMoredetails.valid" >המשך</button>
+            </div>
+
+            </form> 
         </div>
       
 
