@@ -9,6 +9,7 @@ import { sourceUrl } from '@angular/compiler';
   selector: 'businessForm',
   template: `
 
+
   <div class="container-lia container">
   <div class="col-md-12 col-xs-12">
       <h3 class="blue"> פרטי עסק</h3></div>
@@ -27,57 +28,45 @@ import { sourceUrl } from '@angular/compiler';
       <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='כתובת בית העסק' formControlName="address"/></div>
       <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="כתובת אתר העסק" formControlName="websiteAddress"/></div>
       <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="קטגורית עסק" formControlName="category"/></div>
-
-
-      
       </form>      
       </div>
       
         <div *ngIf="this.service.anotherDetails">
 
-            <form [formGroup]="service.frmMoredetails" (ngSubmit)="service.submitFrmBusiness()">
-
-            <div class="col-md-3 col-xs-3"><input class="input-difult blue height-78" placeholder="logo" formControlName="logo"/></div>
-            <div class="col-md-6 col-xs-6"><input class="input-difult blue height-78" placeholder="שעות פתיחה" formControlName="OpeningHours"/></div>
-            <div class="col-md-3 col-xs-3">
-                <button class="btn btn-width bg-blue height-78" routerLink="this.service.routeOrStay" [disabled]="!service.frmMoredetails.valid" >המשך</button>
-            </div>
-
-            </form> 
-        </div>
-      
+        <form [formGroup]="service.frmMoredetails" (ngSubmit)="service.submitFrmBusiness()">
 
         
-            <a (click)="this.f()">לוגו</a>
-            <br /><br />
-            <label class="uploader" ondragover="return false;"
-                [class.loaded]="loaded" 
-                [style.outlineColor]="dragging ? activeColor : baseColor"
-                (dragenter)="handleDragEnter()"
-                (dragleave)="handleDragLeave()"
-                (drop)="handleDrop($event)">
-                
-                <i class="icon icon-upload" 
-                    [style.color]="dragging 
-                        ? ((imageSrc.length > 0) ? overlayColor : activeColor)
-                        : ((imageSrc.length > 0) ? overlayColor : baseColor)">
-                </i>
-                
-                <img 
-                    [src]="imageSrc" 
-                    (load)="handleImageLoad()" 
-                    [class.loaded]="imageLoaded"/>              
-            </label>
-            <input type="file" accept=".jpg, .jpeg, .png"  id="file"  name="file" style="display:none" (change)="this.handleInputChange($event)" (load)="this.handleImageLoad()">
-            <img />
-           
-            </div>     
-          
+        <a (click)="this.f()">לוגו</a>
+        <br><br>
+        <label class="uploader" ondragover="return false;"
+            [class.loaded]="loaded" 
+            [style.outlineColor]="dragging ? activeColor : baseColor"
+            (dragenter)="handleDragEnter()"
+            (dragleave)="handleDragLeave()"
+            (drop)="handleDrop($event)">
+            
+            <i class="icon icon-upload" 
+                [style.color]="dragging 
+                    ? ((imageSrc.length > 0) ? overlayColor : activeColor)
+                    : ((imageSrc.length > 0) ? overlayColor : baseColor)">
+            </i>
+            
+            <img 
+                [src]="imageSrc" 
+                (load)="handleImageLoad()" 
+                [class.loaded]="imageLoaded"/>              
+        </label>
+        <input type="file" accept=".jpg, .jpeg, .png"  id="file"  name="file" style="display:none" (change)="this.handleInputChange($event)" (load)="this.handleImageLoad()"  formControlName="logo">
+        <img />
+        <input placeholder="שעות פתיחה" formControlName="OpeningHours"/>
 
+        <a [routerLink]="this.service.routeOrStay">
+        <input type="submit" value="המשך" [disabled]="!service.frmMoredetails.valid" />
+        </a>
+        </form> 
+            </div>
 
-
-           
-
+     
      `,
   styles: [`
           .uploader input {
@@ -144,6 +133,9 @@ import { sourceUrl } from '@angular/compiler';
           .uploader img.loaded {
             opacity: 1;
                   }
+
+
+                 
       `
     ]
 })
@@ -272,4 +264,8 @@ export class businessFormComponent  {
 
 /*
             <button [routerLink]="this.routeOrStay" (click)="continue()">המשך</button>
+
+            <input placeholder="logo" formControlName="logo"/>
+
+            ngClass="{'disabledSubmit': !service.frmBusiness.valid}"
 */
