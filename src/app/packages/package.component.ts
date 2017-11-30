@@ -41,7 +41,7 @@ import { LiaService } from "../lia.service";
         <ng-content></ng-content>
         </div>  
 
-        <div class="col-xs-3 col-md-3 p-none">    
+        <div *ngIf="this.service.isInner" class="col-xs-3 col-md-3 p-none">    
         <div class="add-cart bg-yellow ">
         <input type="button" class="center-center btn-white" value="הוסף לסל" (click)="this.service.clickAddToCart()" >
         <button routerLink="../" class="pull-right btn-font"><i class="icon-icon-x_Artboard-2-01 "></i> </button>

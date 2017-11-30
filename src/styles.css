@@ -110,8 +110,17 @@ body {
     color: white;
 
 }
+.input-difult{
+width: 100%;
+border-radius: 12px;
+margin-bottom: 10px;
+height: 34px;
+border: 1px solid;
+padding-right: 3px;}
 
-
+.height-78{
+    height: 78px;
+}
 /* login */
 .bg-login {
     

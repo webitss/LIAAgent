@@ -29,7 +29,7 @@ import { Input } from "@angular/core";
         <footer class="menu-footer">
             
            <ul>
-            <li routerLink="galery" class="hoverbtn effect-8 btn-footer" >
+            <li routerLink="galery" class="hoverbtn effect-8 btn-footer" [ngClass]="{'active':this.rr,'cc':!this.rr}"    >
             <i class="icon-image-10"></i>
             </li>
 
@@ -76,14 +76,16 @@ import { Input } from "@angular/core";
                 height: 30px;
                 margin: 7px;
             }
-
+.cc{
+    color="green";
+}
             .hoverbtn.auto-width {
                 width: auto;
                 height: auto;
                 padding: 15px;
             }
 
-            /*.hoverbtn:after {
+            .hoverbtn:after {
                 pointer-events: none;
                 position: absolute;
                 width: 100%;
@@ -94,7 +96,7 @@ import { Input } from "@angular/core";
                 box-sizing: content-box;
             }
 
-            .hoverbtn.effect-8:after {
+           /* .hoverbtn.effect-8:after {
                 top: 0;
                 left: 0;
                 padding: 0;
@@ -113,8 +115,7 @@ import { Input } from "@angular/core";
                 -webkit-animation: sonarEffect 1.3s ease-out 75ms;
                 -moz-animation: sonarEffect 1.3s ease-out 75ms;
                 animation: sonarEffect 1.3s ease-out 75ms;
-            }
-*/
+            }*/
             
         `
     ]
@@ -122,11 +123,15 @@ import { Input } from "@angular/core";
 export class MenuComponent {
     
 
-
+rr:boolean;
     constructor(public service: LiaService, public router: Router) {
         this.userWantOut=false;
+        this.rr=false;
     }
-
+r()
+{
+    this.rr=true;
+}
     @Input() userWantOut:boolean;
     userWantOutFunc()
     {

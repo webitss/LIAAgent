@@ -8,6 +8,7 @@ import { sourceUrl } from '@angular/compiler';
 @Component({
   selector: 'businessForm',
   template: `
+<<<<<<< HEAD
       <p> פרטי עסק</p>
 
       <div *ngIf="!this.service.anotherDetails" >
@@ -19,11 +20,36 @@ import { sourceUrl } from '@angular/compiler';
       <input placeholder="כתובת אתר העסק" formControlName="websiteAddress"/>
       <input placeholder="קטגורית עסק" formControlName="category"/>
       <input type="submit" value="המשך"   >
+=======
+
+  <div class="container-lia container">
+  <div class="col-md-12 col-xs-12">
+      <h3 class="blue"> פרטי עסק</h3></div>
+
+
+      <div *ngIf="!this.service.anotherDetails" >
+      <form [formGroup]="service.frmBusiness" (ngSubmit)="service.submitFrmBusiness(this.service.frmBusiness.value)">
+
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="שם העסק" formControlName="name"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='ח"פ' formControlName="PrivatelyHeldCompany"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='טלפון בית העסק' formControlName="phone"/></div>
+
+      <div  class="col-md-3 col-xs-3 pull-right">
+       <button class="btn btn-width bg-blue height-78" [disabled]="!service.frmBusiness.valid">המשך</button></div>
+
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder='כתובת בית העסק' formControlName="address"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="כתובת אתר העסק" formControlName="websiteAddress"/></div>
+      <div class="col-md-3 col-xs-3"><input class="input-difult blue" placeholder="קטגורית עסק" formControlName="category"/></div>
+
+
+      
+>>>>>>> 6433aac499ea10c1743b93e0363322f4d6d79650
       </form>      
       </div>
       
         <div *ngIf="this.service.anotherDetails">
         <form [formGroup]="service.frmMoredetails" (ngSubmit)="service.submitFrmBusiness()">
+<<<<<<< HEAD
         
         <a (click)="this.f()">לוגו</a>
         <br><br>
@@ -48,11 +74,52 @@ import { sourceUrl } from '@angular/compiler';
         <input type="file" accept=".jpg, .jpeg, .png"  id="file"  name="file" style="display:none" (change)="this.handleInputChange($event)" (load)="this.handleImageLoad()"  formControlName="logo">
         <img />
         <input placeholder="שעות פתיחה" formControlName="OpeningHours"/>
+=======
+        <input placeholder="logo" formControlName="logo"/>
+       <input placeholder="שעות פתיחה" formControlName="OpeningHours"/>
+>>>>>>> 6433aac499ea10c1743b93e0363322f4d6d79650
         <a [routerLink]="this.service.routeOrStay">
-        <input type="submit" value="המשך" [disabled]="!service.frmMoredetails.valid" >
+        <input type="submit" value="המשך" [disabled]="!service.frmMoredetails.valid" />
         </a>
         </form> 
+<<<<<<< HEAD
             </div>
+=======
+        </div>
+      
+
+        
+            <a (click)="this.f()">לוגו</a>
+            <br /><br />
+            <label class="uploader" ondragover="return false;"
+                [class.loaded]="loaded" 
+                [style.outlineColor]="dragging ? activeColor : baseColor"
+                (dragenter)="handleDragEnter()"
+                (dragleave)="handleDragLeave()"
+                (drop)="handleDrop($event)">
+                
+                <i class="icon icon-upload" 
+                    [style.color]="dragging 
+                        ? ((imageSrc.length > 0) ? overlayColor : activeColor)
+                        : ((imageSrc.length > 0) ? overlayColor : baseColor)">
+                </i>
+                
+                <img 
+                    [src]="imageSrc" 
+                    (load)="handleImageLoad()" 
+                    [class.loaded]="imageLoaded"/>              
+            </label>
+            <input type="file" accept=".jpg, .jpeg, .png"  id="file"  name="file" style="display:none" (change)="this.handleInputChange($event)" (load)="this.handleImageLoad()">
+            <img />
+           
+            </div>     
+          
+
+
+
+           
+
+>>>>>>> 6433aac499ea10c1743b93e0363322f4d6d79650
      `,
   styles: [`
           .uploader input {
