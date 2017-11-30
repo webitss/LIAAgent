@@ -4,24 +4,7 @@ import {LiaService} from "../lia.service";
 
 @Component({
     selector: 'app-galery',
-    template: `
-        <div class="container-lia container">
-            <div class="col-md-2 arrow-img-galery">
-            <i class="icon-arrow-right-02" (click)="this.changePicture(true)"></i>
-            </div>
-
-            <div class="myDiv col-md-8">
-             <div><img class="slide-img-galery" [src]=this.service.galeryPictures[i]></div>
-             </div>
-
-            <div class="col-md-2 arrow-img-galery">
-            <i class="icon-arrow-left-03" (click)="this.changePicture(false)"></i>
-            </div>
-            
-
-        </div>
-
-    `,
+    templateUrl: 'galery.component.html',
 })
 export class GaleryComponent implements OnInit {
     i:number;
@@ -50,4 +33,3 @@ export class GaleryComponent implements OnInit {
     }
 
 }
-//<img src="assets/pictures/"${this.myPictures[0]}/>

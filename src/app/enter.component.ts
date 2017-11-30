@@ -213,7 +213,7 @@ import {AuthService} from "./authentication.service";
 })
 export class EnterComponent {
 
-    loginName: any = "ruthi";
+    loginName: any = "ayala & chaya";
     Congratulations: string;
     date = new Date();
     hour:any;
