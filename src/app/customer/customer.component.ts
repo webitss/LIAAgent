@@ -3,44 +3,9 @@ import { LiaService } from '../lia.service';
 
 @Component({
   selector: 'app-customer',
-  template: `
-   
-    
-          <div class="col-md-7 col-xs-7">
-          <div class="container-lia container">
-                    <div class="t-center"><i class="icon-arrow-up-05 t-center green f-size-icon"></i></div>
-                    <div class="border-bottam-table green" *ngFor="let p of this.service.customers">
-                                <div (click)="customerClicked()">
-                                    <span class="col-md-3 col-xs-3">{{p.name}}</span>
-                                    <span class="col-md-4 col-xs-4">{{p.address}}</span>
-                                    <span class="col-md-4 col-xs-4">{{p.num}}</span>
-                                    <span class="col-md-1 col-xs-1"><i class="icon-arrow-left-03 green f-size-icon"></i></span>
-                                </div>
-                    </div>
-                      <div *ngIf="this.allowDetails"> <p>uuuuuuuuu</p> </div>
-                      <div class="t-center"><i class="icon-arrow-down-04 t-center green f-size-icon"></i></div>
-         </div>
-         </div>
+  templateUrl: 'customer.component.html',
+  styles: ['customer.component.scss']
 
-        <div class="col-md-5 col-xs-5 bg-gray">
-                <div class="container-lia container">
-                      <div class="col-md-8 col-md-offset-2">
-                                  <div>
-                                  <input class="input-difult green" placeholder="חיפוש לקוח קיים"/>
-                                  </div>
-                            <button class="btn btn-width bg-green" routerLink="../cart">{{this.valueButton}}</button>
-                      </div>
-              </div>
-        </div>
-
-
-
-    
-
-
-
-  `,
-  styles: []
 })
 export class CustomerComponent implements OnInit {
   valueButton:string;

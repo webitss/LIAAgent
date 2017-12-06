@@ -1,16 +1,13 @@
 import {Component, Input} from "@angular/core";
-import { LiaService } from "../lia.service";
+import { LiaService } from "../../lia.service";
 
 
 
 @Component({
     selector: 'formOfUse',
-    styles: [ ``],
-    template: 
-    `<a routerLink="../"><i>x</i></a>
-    <div>תקנון השימוש</div>
-
- `
+    styles: ['formOfUse.component.scss'],
+    templateUrl: 'formOfUse.component.html'
+  
 })
 export class FormOfUseComponent  {
     
