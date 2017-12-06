@@ -65,8 +65,10 @@ import { sourceUrl } from '@angular/compiler';
         </a>
         </form> 
             </div>
+  
 
-     
+        
+            
      `,
   styles: [`
           .uploader input {
