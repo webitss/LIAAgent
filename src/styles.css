@@ -6,6 +6,10 @@ body {
                
      }
 
+     menu, dir {
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;}
+
      .container-lia{
         width: 100%;
         height: 81vh;
@@ -109,6 +113,9 @@ body {
     filter: brightness(80%);
     color: white;
 
+}
+:focus {
+    outline: -webkit-focus-ring-color auto 0px;
 }
 .input-difult{
 width: 100%;
